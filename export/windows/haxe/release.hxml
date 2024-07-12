@@ -12,6 +12,8 @@
 -D hscript=2.5.0
 -cp D:/Repositories/haxeScry
 -D hxScry=0.0.1-beta
+-cp C:/HaxeToolkit/haxe/lib/flixel-addons/3,2,2
+-D flixel-addons=3.2.2
 -cp source
 -D lime-openal
 -D native

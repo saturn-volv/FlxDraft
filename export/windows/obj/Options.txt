@@ -21,6 +21,7 @@ HXCPP_M64=1
 NAPE_RELEASE_BUILD=1
 desktop=1
 flixel=5.6.2
+flixel_addons=3.2.2
 haxe=4.3.2
 haxe3=1
 haxe4=1

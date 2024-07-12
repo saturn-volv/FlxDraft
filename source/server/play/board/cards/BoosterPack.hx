@@ -38,6 +38,7 @@ class BoosterPack {
 
 	public function new(?spreads:BoosterPackSpread) {
 		setCode = Game.instance.gameSettings.set;
+		spreads ??= Game.instance.spreads;
 
 		var commons:Int = spreads?.common ?? DRAFT_COMMON_DIST;
 		var uncommons:Int = spreads?.uncommon ?? DRAFT_UNCOMMON_DIST;

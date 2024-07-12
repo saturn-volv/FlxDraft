@@ -34,6 +34,9 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
+#ifndef INCLUDED_flixel_addons_effects_FlxSkewedSprite
+#include <flixel/addons/effects/FlxSkewedSprite.h>
+#endif
 #ifndef INCLUDED_flixel_group_FlxTypedGroup
 #include <flixel/group/FlxTypedGroup.h>
 #endif
@@ -43,11 +46,17 @@
 #ifndef INCLUDED_flixel_input_FlxBaseKeyList
 #include <flixel/input/FlxBaseKeyList.h>
 #endif
+#ifndef INCLUDED_flixel_input_FlxInput
+#include <flixel/input/FlxInput.h>
+#endif
 #ifndef INCLUDED_flixel_input_FlxKeyManager
 #include <flixel/input/FlxKeyManager.h>
 #endif
 #ifndef INCLUDED_flixel_input_FlxPointer
 #include <flixel/input/FlxPointer.h>
+#endif
+#ifndef INCLUDED_flixel_input_IFlxInput
+#include <flixel/input/IFlxInput.h>
 #endif
 #ifndef INCLUDED_flixel_input_IFlxInputManager
 #include <flixel/input/IFlxInputManager.h>
@@ -61,6 +70,9 @@
 #ifndef INCLUDED_flixel_input_mouse_FlxMouse
 #include <flixel/input/mouse/FlxMouse.h>
 #endif
+#ifndef INCLUDED_flixel_input_mouse_FlxMouseButton
+#include <flixel/input/mouse/FlxMouseButton.h>
+#endif
 #ifndef INCLUDED_flixel_system_debug_log_LogStyle
 #include <flixel/system/debug/log/LogStyle.h>
 #endif
@@ -72,6 +84,9 @@
 #endif
 #ifndef INCLUDED_flixel_util_typeLimit__NextState_NextState_Impl_
 #include <flixel/util/typeLimit/_NextState/NextState_Impl_.h>
+#endif
+#ifndef INCLUDED_lime_ui_MouseCursor
+#include <lime/ui/MouseCursor.h>
 #endif
 #ifndef INCLUDED_openfl_display_DisplayObject
 #include <openfl/display/DisplayObject.h>
@@ -94,6 +109,12 @@
 #ifndef INCLUDED_openfl_events_IEventDispatcher
 #include <openfl/events/IEventDispatcher.h>
 #endif
+#ifndef INCLUDED_openfl_ui_Mouse
+#include <openfl/ui/Mouse.h>
+#endif
+#ifndef INCLUDED_openfl_ui__MouseCursor_MouseCursor_Impl_
+#include <openfl/ui/_MouseCursor/MouseCursor_Impl_.h>
+#endif
 #ifndef INCLUDED_scryfall_Card
 #include <scryfall/Card.h>
 #endif
@@ -113,20 +134,20 @@
 #include <server/user/player/Player.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_00c9e914cea35c28_16_new,"client.play.CardState","new",0xe21d4bbc,"client.play.CardState.new","client/play/CardState.hx",16,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_24_create,"client.play.CardState","create",0xa7f46d20,"client.play.CardState.create","client/play/CardState.hx",24,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_44_addCard,"client.play.CardState","addCard",0xba77b9ed,"client.play.CardState.addCard","client/play/CardState.hx",44,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_53_update,"client.play.CardState","update",0xb2ea8c2d,"client.play.CardState.update","client/play/CardState.hx",53,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_57_update,"client.play.CardState","update",0xb2ea8c2d,"client.play.CardState.update","client/play/CardState.hx",57,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_68_update,"client.play.CardState","update",0xb2ea8c2d,"client.play.CardState.update","client/play/CardState.hx",68,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_17_boot,"client.play.CardState","boot",0xef9df956,"client.play.CardState.boot","client/play/CardState.hx",17,0xd9baeb94)
-HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_18_boot,"client.play.CardState","boot",0xef9df956,"client.play.CardState.boot","client/play/CardState.hx",18,0xd9baeb94)
+HX_DEFINE_STACK_FRAME(_hx_pos_00c9e914cea35c28_18_new,"client.play.CardState","new",0xe21d4bbc,"client.play.CardState.new","client/play/CardState.hx",18,0xd9baeb94)
+HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_28_create,"client.play.CardState","create",0xa7f46d20,"client.play.CardState.create","client/play/CardState.hx",28,0xd9baeb94)
+HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_54_addCard,"client.play.CardState","addCard",0xba77b9ed,"client.play.CardState.addCard","client/play/CardState.hx",54,0xd9baeb94)
+HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_63_update,"client.play.CardState","update",0xb2ea8c2d,"client.play.CardState.update","client/play/CardState.hx",63,0xd9baeb94)
+HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_67_update,"client.play.CardState","update",0xb2ea8c2d,"client.play.CardState.update","client/play/CardState.hx",67,0xd9baeb94)
+HX_LOCAL_STACK_FRAME(_hx_pos_00c9e914cea35c28_71_update,"client.play.CardState","update",0xb2ea8c2d,"client.play.CardState.update","client/play/CardState.hx",71,0xd9baeb94)
 namespace client{
 namespace play{
 
 void CardState_obj::__construct(){
-            	HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_16_new)
-HXDLIN(  16)		super::__construct();
+            	HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_18_new)
+HXLINE(  24)		this->cardOnCursor = null();
+HXLINE(  22)		this->holdingCard = false;
+HXLINE(  18)		super::__construct();
             	}
 
 Dynamic CardState_obj::__CreateEmpty() { return new CardState_obj; }
@@ -153,212 +174,217 @@ bool CardState_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void CardState_obj::create(){
-            	HX_GC_STACKFRAME(&_hx_pos_00c9e914cea35c28_24_create)
-HXLINE(  25)		this->super::create();
-HXLINE(  26)		this->set_bgColor(-12771027);
-HXLINE(  27)		this->cards =  ::flixel::group::FlxTypedSpriteGroup_obj::__alloc( HX_CTX ,25,25,null());
-HXLINE(  28)		this->add(this->cards);
-HXLINE(  30)		 ::server::play::Game_obj::__alloc( HX_CTX ,HX_("mh3",78,10,53,00));
-HXLINE(  31)		::Array< ::Dynamic> players = ::Array_obj< ::Dynamic>::__new(0);
-HXLINE(  32)		{
-HXLINE(  32)			::String name = HX_("debug_user",f7,0e,75,6c);
-HXLINE(  33)			players->push( ::server::user::player::Player_obj::__alloc( HX_CTX , ::server::user::User_obj::__alloc( HX_CTX ,name)));
+            	HX_GC_STACKFRAME(&_hx_pos_00c9e914cea35c28_28_create)
+HXLINE(  29)		this->super::create();
+HXLINE(  30)		this->set_bgColor(-12771027);
+HXLINE(  31)		this->cards =  ::flixel::group::FlxTypedSpriteGroup_obj::__alloc( HX_CTX ,null(),null(),null());
+HXLINE(  32)		this->add(this->cards);
+HXLINE(  40)		 ::server::play::Game_obj::__alloc( HX_CTX ,HX_("mh3",78,10,53,00),null());
+HXLINE(  41)		::Array< ::Dynamic> players = ::Array_obj< ::Dynamic>::__new(0);
+HXLINE(  42)		{
+HXLINE(  42)			::String name = HX_("debug_user",f7,0e,75,6c);
+HXLINE(  43)			players->push( ::server::user::player::Player_obj::__alloc( HX_CTX , ::server::user::User_obj::__alloc( HX_CTX ,name)));
             		}
-HXLINE(  37)		{
-HXLINE(  37)			int _g = 0;
-HXDLIN(  37)			::Array< ::Dynamic> _g1 = players->__get(0).StaticCast<  ::server::user::player::Player >()->boosterPacks->__get(0).StaticCast<  ::server::play::board::cards::BoosterPack >()->cardsInside;
-HXDLIN(  37)			while((_g < _g1->length)){
-HXLINE(  37)				 ::scryfall::Card card = _g1->__get(_g).StaticCast<  ::scryfall::Card >();
-HXDLIN(  37)				_g = (_g + 1);
-HXLINE(  38)				this->addCard(card);
+HXLINE(  47)		{
+HXLINE(  47)			int _g = 0;
+HXDLIN(  47)			::Array< ::Dynamic> _g1 = players->__get(0).StaticCast<  ::server::user::player::Player >()->boosterPacks->__get(0).StaticCast<  ::server::play::board::cards::BoosterPack >()->cardsInside;
+HXDLIN(  47)			while((_g < _g1->length)){
+HXLINE(  47)				 ::scryfall::Card card = _g1->__get(_g).StaticCast<  ::scryfall::Card >();
+HXDLIN(  47)				_g = (_g + 1);
+HXLINE(  48)				this->addCard(card);
             			}
             		}
-HXLINE(  40)		this->selectedCard = ::client::play::game_pieces::CardSprite_obj::generateShowcaseCard(Dynamic( this->cards->group->members->__get(0)).StaticCast<  ::client::play::game_pieces::CardSprite >());
-HXLINE(  41)		this->add(this->selectedCard);
+HXLINE(  50)		this->selectedCard = ::client::play::game_pieces::CardSprite_obj::generateShowcaseCard(Dynamic( this->cards->group->members->__get(0)).StaticCast<  ::client::play::game_pieces::CardSprite >());
+HXLINE(  51)		this->add(this->selectedCard);
             	}
 
 
  ::client::play::game_pieces::CardSprite CardState_obj::addCard( ::scryfall::Card card){
-            	HX_GC_STACKFRAME(&_hx_pos_00c9e914cea35c28_44_addCard)
-HXLINE(  45)		 ::client::play::game_pieces::CardSprite spr =  ::client::play::game_pieces::CardSprite_obj::__alloc( HX_CTX ,card,null());
-HXLINE(  47)		spr->set__gameIndex(this->cards->group->length);
-HXLINE(  48)		this->cards->add(spr).StaticCast<  ::client::play::game_pieces::CardSprite >();
-HXLINE(  50)		return spr;
+            	HX_GC_STACKFRAME(&_hx_pos_00c9e914cea35c28_54_addCard)
+HXLINE(  55)		 ::client::play::game_pieces::CardSprite spr =  ::client::play::game_pieces::CardSprite_obj::__alloc( HX_CTX ,card,null());
+HXLINE(  57)		spr->set__gameIndex(this->cards->group->length);
+HXLINE(  58)		this->cards->add(spr).StaticCast<  ::client::play::game_pieces::CardSprite >();
+HXLINE(  60)		return spr;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CardState_obj,addCard,return )
 
 void CardState_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_53_update)
-HXLINE(  54)		this->super::update(elapsed);
-HXLINE(  56)		 ::flixel::input::keyboard::FlxKeyList _this = ( ( ::flixel::input::keyboard::FlxKeyList)(::flixel::FlxG_obj::keys->justPressed) );
-HXDLIN(  56)		if (_this->keyManager->checkStatusUnsafe(116,_this->status)) {
-HXLINE(  57)			bool _hx_tmp;
-HXDLIN(  57)			if (::hx::IsNotNull( ::flixel::FlxG_obj::game->_state )) {
-HXLINE(  57)				_hx_tmp = ::hx::IsNull( ::flixel::FlxG_obj::game->_state->_constructor );
+            	HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_63_update)
+HXLINE(  64)		this->super::update(elapsed);
+HXLINE(  66)		 ::flixel::input::keyboard::FlxKeyList _this = ( ( ::flixel::input::keyboard::FlxKeyList)(::flixel::FlxG_obj::keys->justPressed) );
+HXDLIN(  66)		if (_this->keyManager->checkStatusUnsafe(116,_this->status)) {
+HXLINE(  67)			bool _hx_tmp;
+HXDLIN(  67)			if (::hx::IsNotNull( ::flixel::FlxG_obj::game->_state )) {
+HXLINE(  67)				_hx_tmp = ::hx::IsNull( ::flixel::FlxG_obj::game->_state->_constructor );
             			}
             			else {
-HXLINE(  57)				_hx_tmp = true;
+HXLINE(  67)				_hx_tmp = true;
             			}
-HXDLIN(  57)			if (_hx_tmp) {
-HXLINE(  57)				::flixel::FlxG_obj::log->advanced(HX_("FlxG.resetState was called while switching states",8a,c3,6d,a7),::flixel::_hx_system::debug::log::LogStyle_obj::ERROR,true);
+HXDLIN(  67)			if (_hx_tmp) {
+HXLINE(  67)				::flixel::FlxG_obj::log->advanced(HX_("FlxG.resetState was called while switching states",8a,c3,6d,a7),::flixel::_hx_system::debug::log::LogStyle_obj::ERROR,true);
             			}
             			else {
-HXLINE(  57)				if (!(::Std_obj::isOfType(::flixel::FlxG_obj::game->_state->_constructor,::hx::ClassOf< ::flixel::FlxState >()))) {
-HXLINE(  57)					 ::Dynamic nextState = ::flixel::FlxG_obj::game->_state->_constructor;
-HXDLIN(  57)					 ::flixel::FlxState stateOnCall = ::flixel::FlxG_obj::game->_state;
-HXDLIN(  57)					bool _hx_tmp1;
-HXDLIN(  57)					if (::Std_obj::isOfType(nextState,::hx::ClassOf< ::flixel::FlxState >())) {
-HXLINE(  57)						_hx_tmp1 = ::flixel::FlxG_obj::canSwitchTo(( ( ::flixel::FlxState)(nextState) ));
+HXLINE(  67)				if (!(::Std_obj::isOfType(::flixel::FlxG_obj::game->_state->_constructor,::hx::ClassOf< ::flixel::FlxState >()))) {
+HXLINE(  67)					 ::Dynamic nextState = ::flixel::FlxG_obj::game->_state->_constructor;
+HXDLIN(  67)					 ::flixel::FlxState stateOnCall = ::flixel::FlxG_obj::game->_state;
+HXDLIN(  67)					bool _hx_tmp1;
+HXDLIN(  67)					if (::Std_obj::isOfType(nextState,::hx::ClassOf< ::flixel::FlxState >())) {
+HXLINE(  67)						_hx_tmp1 = ::flixel::FlxG_obj::canSwitchTo(( ( ::flixel::FlxState)(nextState) ));
             					}
             					else {
-HXLINE(  57)						_hx_tmp1 = true;
+HXLINE(  67)						_hx_tmp1 = true;
             					}
-HXDLIN(  57)					if (_hx_tmp1) {
+HXDLIN(  67)					if (_hx_tmp1) {
             						HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_0, ::Dynamic,nextState, ::flixel::FlxState,stateOnCall) HXARGC(0)
             						void _hx_run(){
-            							HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_57_update)
-HXLINE(  57)							if (::hx::IsInstanceEq( ::flixel::FlxG_obj::game->_state,stateOnCall )) {
-HXLINE(  57)								::flixel::FlxG_obj::game->_nextState = nextState;
+            							HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_67_update)
+HXLINE(  67)							if (::hx::IsInstanceEq( ::flixel::FlxG_obj::game->_state,stateOnCall )) {
+HXLINE(  67)								::flixel::FlxG_obj::game->_nextState = nextState;
             							}
             							else {
-HXLINE(  57)								::flixel::FlxG_obj::log->advanced(HX_("`onOutroComplete` was called after the state was switched. This will be ignored",46,b2,58,c7),::flixel::_hx_system::debug::log::LogStyle_obj::WARNING,true);
+HXLINE(  67)								::flixel::FlxG_obj::log->advanced(HX_("`onOutroComplete` was called after the state was switched. This will be ignored",46,b2,58,c7),::flixel::_hx_system::debug::log::LogStyle_obj::WARNING,true);
             							}
             						}
             						HX_END_LOCAL_FUNC0((void))
 
-HXLINE(  57)						::flixel::FlxG_obj::game->_state->startOutro( ::Dynamic(new _hx_Closure_0(nextState,stateOnCall)));
+HXLINE(  67)						::flixel::FlxG_obj::game->_state->startOutro( ::Dynamic(new _hx_Closure_0(nextState,stateOnCall)));
             					}
             				}
             				else {
-HXLINE(  57)					 ::Dynamic nextState1 = ::flixel::util::typeLimit::_NextState::NextState_Impl__obj::fromState(( ( ::flixel::FlxState)(::Type_obj::createInstance(::Type_obj::getClass(::flixel::FlxG_obj::game->_state),::cpp::VirtualArray_obj::__new(0))) ));
-HXDLIN(  57)					 ::flixel::FlxState stateOnCall1 = ::flixel::FlxG_obj::game->_state;
-HXDLIN(  57)					bool _hx_tmp2;
-HXDLIN(  57)					if (::Std_obj::isOfType(nextState1,::hx::ClassOf< ::flixel::FlxState >())) {
-HXLINE(  57)						_hx_tmp2 = ::flixel::FlxG_obj::canSwitchTo(( ( ::flixel::FlxState)(nextState1) ));
+HXLINE(  67)					 ::Dynamic nextState1 = ::flixel::util::typeLimit::_NextState::NextState_Impl__obj::fromState(( ( ::flixel::FlxState)(::Type_obj::createInstance(::Type_obj::getClass(::flixel::FlxG_obj::game->_state),::cpp::VirtualArray_obj::__new(0))) ));
+HXDLIN(  67)					 ::flixel::FlxState stateOnCall1 = ::flixel::FlxG_obj::game->_state;
+HXDLIN(  67)					bool _hx_tmp2;
+HXDLIN(  67)					if (::Std_obj::isOfType(nextState1,::hx::ClassOf< ::flixel::FlxState >())) {
+HXLINE(  67)						_hx_tmp2 = ::flixel::FlxG_obj::canSwitchTo(( ( ::flixel::FlxState)(nextState1) ));
             					}
             					else {
-HXLINE(  57)						_hx_tmp2 = true;
+HXLINE(  67)						_hx_tmp2 = true;
             					}
-HXDLIN(  57)					if (_hx_tmp2) {
+HXDLIN(  67)					if (_hx_tmp2) {
             						HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_1, ::Dynamic,nextState1, ::flixel::FlxState,stateOnCall1) HXARGC(0)
             						void _hx_run(){
-            							HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_57_update)
-HXLINE(  57)							if (::hx::IsInstanceEq( ::flixel::FlxG_obj::game->_state,stateOnCall1 )) {
-HXLINE(  57)								::flixel::FlxG_obj::game->_nextState = nextState1;
+            							HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_67_update)
+HXLINE(  67)							if (::hx::IsInstanceEq( ::flixel::FlxG_obj::game->_state,stateOnCall1 )) {
+HXLINE(  67)								::flixel::FlxG_obj::game->_nextState = nextState1;
             							}
             							else {
-HXLINE(  57)								::flixel::FlxG_obj::log->advanced(HX_("`onOutroComplete` was called after the state was switched. This will be ignored",46,b2,58,c7),::flixel::_hx_system::debug::log::LogStyle_obj::WARNING,true);
+HXLINE(  67)								::flixel::FlxG_obj::log->advanced(HX_("`onOutroComplete` was called after the state was switched. This will be ignored",46,b2,58,c7),::flixel::_hx_system::debug::log::LogStyle_obj::WARNING,true);
             							}
             						}
             						HX_END_LOCAL_FUNC0((void))
 
-HXLINE(  57)						::flixel::FlxG_obj::game->_state->startOutro( ::Dynamic(new _hx_Closure_1(nextState1,stateOnCall1)));
+HXLINE(  67)						::flixel::FlxG_obj::game->_state->startOutro( ::Dynamic(new _hx_Closure_1(nextState1,stateOnCall1)));
             					}
             				}
             			}
             		}
-HXLINE(  61)		::Array< ::Dynamic> _g = ::Array_obj< ::Dynamic>::__new(0);
-HXDLIN(  61)		{
-HXLINE(  61)			int _g1 = 0;
-HXDLIN(  61)			::Array< ::Dynamic> _g2 = this->cards->group->members;
-HXDLIN(  61)			while((_g1 < _g2->length)){
-HXLINE(  61)				 ::client::play::game_pieces::CardSprite v = _g2->__get(_g1).StaticCast<  ::client::play::game_pieces::CardSprite >();
-HXDLIN(  61)				_g1 = (_g1 + 1);
-HXDLIN(  61)				if (v->hovering) {
-HXLINE(  61)					_g->push(v);
-            				}
-            			}
-            		}
-HXDLIN(  61)		::Array< ::Dynamic> hoverFilter = _g;
-HXLINE(  62)		{
-HXLINE(  62)			int _g3 = 0;
-HXDLIN(  62)			::Array< ::Dynamic> _g4 = this->cards->group->members;
-HXDLIN(  62)			while((_g3 < _g4->length)){
-HXLINE(  62)				 ::client::play::game_pieces::CardSprite card = _g4->__get(_g3).StaticCast<  ::client::play::game_pieces::CardSprite >();
-HXDLIN(  62)				_g3 = (_g3 + 1);
-HXLINE(  63)				bool _hx_tmp3;
-HXDLIN(  63)				if (::flixel::FlxG_obj::mouse->overlaps(card,null())) {
-HXLINE(  63)					if ((hoverFilter->length > 0)) {
-HXLINE(  63)						_hx_tmp3 = hoverFilter->contains(card);
-            					}
-            					else {
-HXLINE(  63)						_hx_tmp3 = true;
-            					}
-            				}
-            				else {
-HXLINE(  63)					_hx_tmp3 = false;
-            				}
-HXDLIN(  63)				if (_hx_tmp3) {
-HXLINE(  64)					card->onHover();
-            				}
-            				else {
-HXLINE(  66)					card->offHover();
-            				}
-            			}
-            		}
-HXLINE(  68)		{
+HXLINE(  71)		{
             			HX_BEGIN_LOCAL_FUNC_S0(::hx::LocalFunc,_hx_Closure_2) HXARGC(3)
             			int _hx_run(int i, ::client::play::game_pieces::CardSprite a, ::client::play::game_pieces::CardSprite b){
-            				HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_68_update)
-HXLINE(  69)				Float Value1;
-HXDLIN(  69)				if (a->hovering) {
-HXLINE(  69)					Value1 = ( (Float)(1) );
+            				HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_71_update)
+HXLINE(  73)				if (a->_trackingMouse) {
+HXLINE(  74)					return 1;
+            				}
+HXLINE(  75)				bool _g;
+HXDLIN(  75)				if (!(a->hovering)) {
+HXLINE(  75)					_g = !(b->hovering);
             				}
             				else {
-HXLINE(  69)					Value1 = ( (Float)(0) );
+HXLINE(  75)					_g = true;
             				}
-HXDLIN(  69)				Float Value2;
-HXDLIN(  69)				if (b->hovering) {
-HXLINE(  69)					Value2 = ( (Float)(1) );
-            				}
-            				else {
-HXLINE(  69)					Value2 = ( (Float)(0) );
-            				}
-HXDLIN(  69)				int result = 0;
-HXDLIN(  69)				if ((Value1 < Value2)) {
-HXLINE(  69)					result = i;
+HXDLIN(  75)				if (_g) {
+HXLINE(  75)					return 1;
             				}
             				else {
-HXLINE(  69)					if ((Value1 > Value2)) {
-HXLINE(  69)						result = -(i);
-            					}
+HXLINE(  75)					return -1;
             				}
-HXDLIN(  69)				return result;
+HXDLIN(  75)				return 0;
             			}
             			HX_END_LOCAL_FUNC3(return)
 
-            			HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_3,int,a1, ::Dynamic,_g5) HXARGC(2)
+            			HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_3,int,a1, ::Dynamic,_g) HXARGC(2)
             			int _hx_run( ::client::play::game_pieces::CardSprite a2, ::client::play::game_pieces::CardSprite a3){
-            				HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_68_update)
-HXLINE(  68)				return ( (int)(_g5(a1,a2,a3)) );
+            				HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_71_update)
+HXLINE(  71)				return ( (int)(_g(a1,a2,a3)) );
             			}
             			HX_END_LOCAL_FUNC2(return)
 
-HXLINE(  68)			 ::Dynamic _g5 =  ::Dynamic(new _hx_Closure_2());
-HXDLIN(  68)			int a1 = -1;
-HXDLIN(  68)			 ::Dynamic _hx_tmp4 =  ::Dynamic(new _hx_Closure_3(a1,_g5));
-HXDLIN(  68)			this->cards->group->members->sort(_hx_tmp4);
+HXLINE(  71)			 ::Dynamic _g =  ::Dynamic(new _hx_Closure_2());
+HXDLIN(  71)			int a1 = -1;
+HXDLIN(  71)			 ::Dynamic _hx_tmp3 =  ::Dynamic(new _hx_Closure_3(a1,_g));
+HXDLIN(  71)			this->cards->group->members->sort(_hx_tmp3);
             		}
-HXLINE(  72)		if ((hoverFilter->length > 0)) {
-HXLINE(  73)			this->selectedCard->loadGraphicFromSprite(hoverFilter->__get(0).StaticCast<  ::client::play::game_pieces::CardSprite >());
-HXLINE(  74)			this->selectedCard->setGraphicSize((::client::play::game_pieces::CardSprite_obj::cardWidth * ((Float)2.2)),null());
-HXLINE(  75)			this->selectedCard->updateHitbox();
-HXLINE(  76)			 ::client::play::game_pieces::CardSprite _hx_tmp5 = this->selectedCard;
-HXDLIN(  76)			int _hx_tmp6 = ::flixel::FlxG_obj::width;
-HXDLIN(  76)			_hx_tmp5->set_x((( (Float)(_hx_tmp6) ) - this->selectedCard->get_width()));
-HXLINE(  77)			this->selectedCard->set_visible(true);
+HXLINE(  78)		this->selectedCard->set_visible(!(this->holdingCard));
+HXLINE(  79)		if (!(this->holdingCard)) {
+HXLINE(  80)			::Array< ::Dynamic> _g1 = ::Array_obj< ::Dynamic>::__new(0);
+HXDLIN(  80)			{
+HXLINE(  80)				int _g2 = 0;
+HXDLIN(  80)				::Array< ::Dynamic> _g3 = this->cards->group->members;
+HXDLIN(  80)				while((_g2 < _g3->length)){
+HXLINE(  80)					 ::client::play::game_pieces::CardSprite v = _g3->__get(_g2).StaticCast<  ::client::play::game_pieces::CardSprite >();
+HXDLIN(  80)					_g2 = (_g2 + 1);
+HXDLIN(  80)					if (v->hovering) {
+HXLINE(  80)						_g1->push(v);
+            					}
+            				}
+            			}
+HXDLIN(  80)			::Array< ::Dynamic> hoverFilter = _g1;
+HXLINE(  81)			{
+HXLINE(  81)				int _g4 = 0;
+HXDLIN(  81)				::Array< ::Dynamic> _g5 = this->cards->group->members;
+HXDLIN(  81)				while((_g4 < _g5->length)){
+HXLINE(  81)					 ::client::play::game_pieces::CardSprite card = _g5->__get(_g4).StaticCast<  ::client::play::game_pieces::CardSprite >();
+HXDLIN(  81)					_g4 = (_g4 + 1);
+HXLINE(  82)					bool _hx_tmp4;
+HXDLIN(  82)					if (::flixel::FlxG_obj::mouse->overlaps(card,null())) {
+HXLINE(  82)						if ((hoverFilter->length > 0)) {
+HXLINE(  82)							_hx_tmp4 = hoverFilter->contains(card);
+            						}
+            						else {
+HXLINE(  82)							_hx_tmp4 = true;
+            						}
+            					}
+            					else {
+HXLINE(  82)						_hx_tmp4 = false;
+            					}
+HXDLIN(  82)					if (_hx_tmp4) {
+HXLINE(  83)						card->onHover();
+            					}
+            					else {
+HXLINE(  85)						card->offHover();
+            					}
+            				}
+            			}
+HXLINE(  88)			if ((hoverFilter->length > 0)) {
+HXLINE(  89)				this->selectedCard->loadGraphicFromSprite(hoverFilter->__get(0).StaticCast<  ::client::play::game_pieces::CardSprite >());
+HXLINE(  90)				this->selectedCard->setGraphicSize((::client::play::game_pieces::CardSprite_obj::cardWidth * ((Float)2.2)),null());
+HXLINE(  91)				this->selectedCard->updateHitbox();
+HXLINE(  92)				 ::client::play::game_pieces::CardSprite _hx_tmp5 = this->selectedCard;
+HXDLIN(  92)				int _hx_tmp6 = ::flixel::FlxG_obj::width;
+HXDLIN(  92)				_hx_tmp5->set_x((( (Float)(_hx_tmp6) ) - this->selectedCard->get_width()));
+HXLINE(  93)				this->selectedCard->set_visible(true);
+HXLINE(  94)				::openfl::ui::Mouse_obj::set_cursor(::openfl::ui::_MouseCursor::MouseCursor_Impl__obj::fromLimeCursor(::lime::ui::MouseCursor_obj::MOVE_dyn()));
+HXLINE(  96)				if ((::flixel::FlxG_obj::mouse->_leftButton->current == 2)) {
+HXLINE(  97)					this->cardOnCursor = hoverFilter->__get(0).StaticCast<  ::client::play::game_pieces::CardSprite >();
+HXLINE(  99)					this->cardOnCursor->startTracking();
+HXLINE( 100)					this->holdingCard = true;
+            				}
+            			}
+            			else {
+HXLINE( 103)				::openfl::ui::Mouse_obj::set_cursor(::openfl::ui::_MouseCursor::MouseCursor_Impl__obj::fromLimeCursor(::lime::ui::MouseCursor_obj::ARROW_dyn()));
+HXLINE( 104)				this->selectedCard->set_visible(false);
+            			}
             		}
             		else {
-HXLINE(  79)			this->selectedCard->set_visible(false);
+HXLINE( 107)			if ((::flixel::FlxG_obj::mouse->_leftButton->current == -1)) {
+HXLINE( 108)				this->cardOnCursor->stopTracking();
+HXLINE( 109)				this->holdingCard = false;
+            			}
             		}
             	}
 
-
-int CardState_obj::MARGIN_X;
-
-int CardState_obj::MARGIN_Y;
 
 
 ::hx::ObjectPtr< CardState_obj > CardState_obj::__new() {
@@ -382,6 +408,8 @@ void CardState_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(CardState);
 	HX_MARK_MEMBER_NAME(cards,"cards");
+	HX_MARK_MEMBER_NAME(holdingCard,"holdingCard");
+	HX_MARK_MEMBER_NAME(cardOnCursor,"cardOnCursor");
 	HX_MARK_MEMBER_NAME(selectedCard,"selectedCard");
 	 ::flixel::FlxState_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
@@ -390,6 +418,8 @@ void CardState_obj::__Mark(HX_MARK_PARAMS)
 void CardState_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(cards,"cards");
+	HX_VISIT_MEMBER_NAME(holdingCard,"holdingCard");
+	HX_VISIT_MEMBER_NAME(cardOnCursor,"cardOnCursor");
 	HX_VISIT_MEMBER_NAME(selectedCard,"selectedCard");
 	 ::flixel::FlxState_obj::__Visit(HX_VISIT_ARG);
 }
@@ -407,7 +437,11 @@ void CardState_obj::__Visit(HX_VISIT_PARAMS)
 	case 7:
 		if (HX_FIELD_EQ(inName,"addCard") ) { return ::hx::Val( addCard_dyn() ); }
 		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"holdingCard") ) { return ::hx::Val( holdingCard ); }
+		break;
 	case 12:
+		if (HX_FIELD_EQ(inName,"cardOnCursor") ) { return ::hx::Val( cardOnCursor ); }
 		if (HX_FIELD_EQ(inName,"selectedCard") ) { return ::hx::Val( selectedCard ); }
 	}
 	return super::__Field(inName,inCallProp);
@@ -419,7 +453,11 @@ void CardState_obj::__Visit(HX_VISIT_PARAMS)
 	case 5:
 		if (HX_FIELD_EQ(inName,"cards") ) { cards=inValue.Cast<  ::flixel::group::FlxTypedSpriteGroup >(); return inValue; }
 		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"holdingCard") ) { holdingCard=inValue.Cast< bool >(); return inValue; }
+		break;
 	case 12:
+		if (HX_FIELD_EQ(inName,"cardOnCursor") ) { cardOnCursor=inValue.Cast<  ::client::play::game_pieces::CardSprite >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"selectedCard") ) { selectedCard=inValue.Cast<  ::client::play::game_pieces::CardSprite >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
@@ -428,6 +466,8 @@ void CardState_obj::__Visit(HX_VISIT_PARAMS)
 void CardState_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_("cards",a3,f8,1f,41));
+	outFields->push(HX_("holdingCard",73,dc,9a,94));
+	outFields->push(HX_("cardOnCursor",45,af,0b,41));
 	outFields->push(HX_("selectedCard",cb,3d,54,d2));
 	super::__GetFields(outFields);
 };
@@ -435,44 +475,25 @@ void CardState_obj::__GetFields(Array< ::String> &outFields)
 #ifdef HXCPP_SCRIPTABLE
 static ::hx::StorageInfo CardState_obj_sMemberStorageInfo[] = {
 	{::hx::fsObject /*  ::flixel::group::FlxTypedSpriteGroup */ ,(int)offsetof(CardState_obj,cards),HX_("cards",a3,f8,1f,41)},
+	{::hx::fsBool,(int)offsetof(CardState_obj,holdingCard),HX_("holdingCard",73,dc,9a,94)},
+	{::hx::fsObject /*  ::client::play::game_pieces::CardSprite */ ,(int)offsetof(CardState_obj,cardOnCursor),HX_("cardOnCursor",45,af,0b,41)},
 	{::hx::fsObject /*  ::client::play::game_pieces::CardSprite */ ,(int)offsetof(CardState_obj,selectedCard),HX_("selectedCard",cb,3d,54,d2)},
 	{ ::hx::fsUnknown, 0, null()}
 };
-static ::hx::StaticInfo CardState_obj_sStaticStorageInfo[] = {
-	{::hx::fsInt,(void *) &CardState_obj::MARGIN_X,HX_("MARGIN_X",c7,56,52,9e)},
-	{::hx::fsInt,(void *) &CardState_obj::MARGIN_Y,HX_("MARGIN_Y",c8,56,52,9e)},
-	{ ::hx::fsUnknown, 0, null()}
-};
+static ::hx::StaticInfo *CardState_obj_sStaticStorageInfo = 0;
 #endif
 
 static ::String CardState_obj_sMemberFields[] = {
 	HX_("cards",a3,f8,1f,41),
+	HX_("holdingCard",73,dc,9a,94),
+	HX_("cardOnCursor",45,af,0b,41),
 	HX_("selectedCard",cb,3d,54,d2),
 	HX_("create",fc,66,0f,7c),
 	HX_("addCard",91,60,f7,7d),
 	HX_("update",09,86,05,87),
 	::String(null()) };
 
-static void CardState_obj_sMarkStatics(HX_MARK_PARAMS) {
-	HX_MARK_MEMBER_NAME(CardState_obj::MARGIN_X,"MARGIN_X");
-	HX_MARK_MEMBER_NAME(CardState_obj::MARGIN_Y,"MARGIN_Y");
-};
-
-#ifdef HXCPP_VISIT_ALLOCS
-static void CardState_obj_sVisitStatics(HX_VISIT_PARAMS) {
-	HX_VISIT_MEMBER_NAME(CardState_obj::MARGIN_X,"MARGIN_X");
-	HX_VISIT_MEMBER_NAME(CardState_obj::MARGIN_Y,"MARGIN_Y");
-};
-
-#endif
-
 ::hx::Class CardState_obj::__mClass;
-
-static ::String CardState_obj_sStaticFields[] = {
-	HX_("MARGIN_X",c7,56,52,9e),
-	HX_("MARGIN_Y",c8,56,52,9e),
-	::String(null())
-};
 
 void CardState_obj::__register()
 {
@@ -485,13 +506,9 @@ void CardState_obj::__register()
 	__mClass->mConstructArgs = &__Create;
 	__mClass->mGetStaticField = &::hx::Class_obj::GetNoStaticField;
 	__mClass->mSetStaticField = &::hx::Class_obj::SetNoStaticField;
-	__mClass->mMarkFunc = CardState_obj_sMarkStatics;
-	__mClass->mStatics = ::hx::Class_obj::dupFunctions(CardState_obj_sStaticFields);
+	__mClass->mStatics = ::hx::Class_obj::dupFunctions(0 /* sStaticFields */);
 	__mClass->mMembers = ::hx::Class_obj::dupFunctions(CardState_obj_sMemberFields);
 	__mClass->mCanCast = ::hx::TCanCast< CardState_obj >;
-#ifdef HXCPP_VISIT_ALLOCS
-	__mClass->mVisitFunc = CardState_obj_sVisitStatics;
-#endif
 #ifdef HXCPP_SCRIPTABLE
 	__mClass->mMemberStorageInfo = CardState_obj_sMemberStorageInfo;
 #endif
@@ -499,18 +516,6 @@ void CardState_obj::__register()
 	__mClass->mStaticStorageInfo = CardState_obj_sStaticStorageInfo;
 #endif
 	::hx::_hx_RegisterClass(__mClass->mName, __mClass);
-}
-
-void CardState_obj::__boot()
-{
-{
-            	HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_17_boot)
-HXDLIN(  17)		MARGIN_X = 25;
-            	}
-{
-            	HX_STACKFRAME(&_hx_pos_00c9e914cea35c28_18_boot)
-HXDLIN(  18)		MARGIN_Y = 25;
-            	}
 }
 
 } // end namespace client

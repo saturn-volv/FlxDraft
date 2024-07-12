@@ -171,7 +171,7 @@ class HXCPP_CLASS_ATTRIBUTES FlxSprite_obj : public  ::flixel::FlxObject_obj
 		void drawSimple( ::flixel::FlxCamera camera);
 		::Dynamic drawSimple_dyn();
 
-		void drawComplex( ::flixel::FlxCamera camera);
+		virtual void drawComplex( ::flixel::FlxCamera camera);
 		::Dynamic drawComplex_dyn();
 
 		virtual void stamp( ::flixel::FlxSprite Brush,::hx::Null< int >  X,::hx::Null< int >  Y);
@@ -224,7 +224,7 @@ class HXCPP_CLASS_ATTRIBUTES FlxSprite_obj : public  ::flixel::FlxObject_obj
 
 		virtual bool isOnScreen( ::flixel::FlxCamera camera);
 
-		bool isSimpleRender( ::flixel::FlxCamera camera);
+		virtual bool isSimpleRender( ::flixel::FlxCamera camera);
 		::Dynamic isSimpleRender_dyn();
 
 		bool isSimpleRenderBlit( ::flixel::FlxCamera camera);

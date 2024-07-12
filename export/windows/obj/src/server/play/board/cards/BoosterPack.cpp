@@ -27,13 +27,13 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_c0620774913b577c_25_new,"server.play.board.cards.BoosterPack","new",0xaf807399,"server.play.board.cards.BoosterPack.new","server/play/board/cards/BoosterPack.hx",25,0xe81a1c99)
-HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_80_determineWildcardDistribution,"server.play.board.cards.BoosterPack","determineWildcardDistribution",0xf5a85c2a,"server.play.board.cards.BoosterPack.determineWildcardDistribution","server/play/board/cards/BoosterPack.hx",80,0xe81a1c99)
-HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_94_chooseCard,"server.play.board.cards.BoosterPack","chooseCard",0xdbdc822e,"server.play.board.cards.BoosterPack.chooseCard","server/play/board/cards/BoosterPack.hx",94,0xe81a1c99)
-HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_97_getBoosterValidCard,"server.play.board.cards.BoosterPack","getBoosterValidCard",0x9486826b,"server.play.board.cards.BoosterPack.getBoosterValidCard","server/play/board/cards/BoosterPack.hx",97,0xe81a1c99)
-HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_105_getBoosterValidBasicLandCard,"server.play.board.cards.BoosterPack","getBoosterValidBasicLandCard",0xe32a162e,"server.play.board.cards.BoosterPack.getBoosterValidBasicLandCard","server/play/board/cards/BoosterPack.hx",105,0xe81a1c99)
-HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_108_getBoosterFoilCard,"server.play.board.cards.BoosterPack","getBoosterFoilCard",0x6687a8bd,"server.play.board.cards.BoosterPack.getBoosterFoilCard","server/play/board/cards/BoosterPack.hx",108,0xe81a1c99)
+HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_81_determineWildcardDistribution,"server.play.board.cards.BoosterPack","determineWildcardDistribution",0xf5a85c2a,"server.play.board.cards.BoosterPack.determineWildcardDistribution","server/play/board/cards/BoosterPack.hx",81,0xe81a1c99)
+HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_95_chooseCard,"server.play.board.cards.BoosterPack","chooseCard",0xdbdc822e,"server.play.board.cards.BoosterPack.chooseCard","server/play/board/cards/BoosterPack.hx",95,0xe81a1c99)
+HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_98_getBoosterValidCard,"server.play.board.cards.BoosterPack","getBoosterValidCard",0x9486826b,"server.play.board.cards.BoosterPack.getBoosterValidCard","server/play/board/cards/BoosterPack.hx",98,0xe81a1c99)
+HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_106_getBoosterValidBasicLandCard,"server.play.board.cards.BoosterPack","getBoosterValidBasicLandCard",0xe32a162e,"server.play.board.cards.BoosterPack.getBoosterValidBasicLandCard","server/play/board/cards/BoosterPack.hx",106,0xe81a1c99)
+HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_109_getBoosterFoilCard,"server.play.board.cards.BoosterPack","getBoosterFoilCard",0x6687a8bd,"server.play.board.cards.BoosterPack.getBoosterFoilCard","server/play/board/cards/BoosterPack.hx",109,0xe81a1c99)
 HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_32_get_setCards,"server.play.board.cards.BoosterPack","get_setCards",0x4aa9c351,"server.play.board.cards.BoosterPack.get_setCards","server/play/board/cards/BoosterPack.hx",32,0xe81a1c99)
-HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_117_getRandomCard,"server.play.board.cards.BoosterPack","getRandomCard",0x3bfdca22,"server.play.board.cards.BoosterPack.getRandomCard","server/play/board/cards/BoosterPack.hx",117,0xe81a1c99)
+HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_118_getRandomCard,"server.play.board.cards.BoosterPack","getRandomCard",0x3bfdca22,"server.play.board.cards.BoosterPack.getRandomCard","server/play/board/cards/BoosterPack.hx",118,0xe81a1c99)
 HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_26_boot,"server.play.board.cards.BoosterPack","boot",0xd8fdb2d9,"server.play.board.cards.BoosterPack.boot","server/play/board/cards/BoosterPack.hx",26,0xe81a1c99)
 HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_27_boot,"server.play.board.cards.BoosterPack","boot",0xd8fdb2d9,"server.play.board.cards.BoosterPack.boot","server/play/board/cards/BoosterPack.hx",27,0xe81a1c99)
 HX_LOCAL_STACK_FRAME(_hx_pos_c0620774913b577c_28_boot,"server.play.board.cards.BoosterPack","boot",0xd8fdb2d9,"server.play.board.cards.BoosterPack.boot","server/play/board/cards/BoosterPack.hx",28,0xe81a1c99)
@@ -46,213 +46,216 @@ void BoosterPack_obj::__construct( ::Dynamic spreads){
             	HX_STACKFRAME(&_hx_pos_c0620774913b577c_25_new)
 HXLINE(  37)		this->cardsInside = ::Array_obj< ::Dynamic>::__new(0);
 HXLINE(  40)		::server::play::board::cards::BoosterPack_obj::setCode = ( (::String)(::server::play::Game_obj::instance->gameSettings->__Field(HX_("set",a2,9b,57,00),::hx::paccDynamic)) );
-HXLINE(  42)		int commons;
-HXDLIN(  42)		 ::Dynamic tmp;
-HXDLIN(  42)		if (::hx::IsNotNull( spreads )) {
-HXLINE(  42)			tmp = spreads->__Field(HX_("common",2b,75,2e,c7),::hx::paccDynamic);
+HXLINE(  41)		if (::hx::IsNull( spreads )) {
+HXLINE(  41)			spreads = ::server::play::Game_obj::instance->spreads;
             		}
-            		else {
-HXLINE(  42)			tmp = null();
-            		}
-HXDLIN(  42)		if (::hx::IsNotNull( tmp )) {
-HXLINE(  42)			commons = ( (int)(tmp) );
-            		}
-            		else {
-HXLINE(  42)			commons = 10;
-            		}
-HXLINE(  43)		int uncommons;
-HXDLIN(  43)		 ::Dynamic tmp1;
+HXLINE(  43)		int commons;
+HXDLIN(  43)		 ::Dynamic tmp;
 HXDLIN(  43)		if (::hx::IsNotNull( spreads )) {
-HXLINE(  43)			tmp1 = spreads->__Field(HX_("uncommon",44,a4,75,c9),::hx::paccDynamic);
+HXLINE(  43)			tmp = spreads->__Field(HX_("common",2b,75,2e,c7),::hx::paccDynamic);
             		}
             		else {
-HXLINE(  43)			tmp1 = null();
+HXLINE(  43)			tmp = null();
             		}
-HXDLIN(  43)		if (::hx::IsNotNull( tmp1 )) {
-HXLINE(  43)			uncommons = ( (int)(tmp1) );
+HXDLIN(  43)		if (::hx::IsNotNull( tmp )) {
+HXLINE(  43)			commons = ( (int)(tmp) );
             		}
             		else {
-HXLINE(  43)			uncommons = 3;
+HXLINE(  43)			commons = 10;
             		}
-HXLINE(  44)		int rares;
-HXDLIN(  44)		 ::Dynamic tmp2;
+HXLINE(  44)		int uncommons;
+HXDLIN(  44)		 ::Dynamic tmp1;
 HXDLIN(  44)		if (::hx::IsNotNull( spreads )) {
-HXLINE(  44)			tmp2 = spreads->__Field(HX_("rare",22,51,a4,4b),::hx::paccDynamic);
+HXLINE(  44)			tmp1 = spreads->__Field(HX_("uncommon",44,a4,75,c9),::hx::paccDynamic);
             		}
             		else {
-HXLINE(  44)			tmp2 = null();
+HXLINE(  44)			tmp1 = null();
             		}
-HXDLIN(  44)		if (::hx::IsNotNull( tmp2 )) {
-HXLINE(  44)			rares = ( (int)(tmp2) );
+HXDLIN(  44)		if (::hx::IsNotNull( tmp1 )) {
+HXLINE(  44)			uncommons = ( (int)(tmp1) );
             		}
             		else {
-HXLINE(  44)			rares = 1;
+HXLINE(  44)			uncommons = 3;
             		}
-HXLINE(  46)		{
-HXLINE(  46)			int _g = 0;
-HXDLIN(  46)			int _g1 = ((commons + uncommons) + rares);
-HXDLIN(  46)			while((_g < _g1)){
-HXLINE(  46)				_g = (_g + 1);
-HXDLIN(  46)				int i = (_g - 1);
-HXLINE(  47)				::String rarity = HX_("common",2b,75,2e,c7);
-HXLINE(  48)				if ((i < commons)) {
-HXLINE(  49)					rarity = HX_("common",2b,75,2e,c7);
+HXLINE(  45)		int rares;
+HXDLIN(  45)		 ::Dynamic tmp2;
+HXDLIN(  45)		if (::hx::IsNotNull( spreads )) {
+HXLINE(  45)			tmp2 = spreads->__Field(HX_("rare",22,51,a4,4b),::hx::paccDynamic);
+            		}
+            		else {
+HXLINE(  45)			tmp2 = null();
+            		}
+HXDLIN(  45)		if (::hx::IsNotNull( tmp2 )) {
+HXLINE(  45)			rares = ( (int)(tmp2) );
+            		}
+            		else {
+HXLINE(  45)			rares = 1;
+            		}
+HXLINE(  47)		{
+HXLINE(  47)			int _g = 0;
+HXDLIN(  47)			int _g1 = ((commons + uncommons) + rares);
+HXDLIN(  47)			while((_g < _g1)){
+HXLINE(  47)				_g = (_g + 1);
+HXDLIN(  47)				int i = (_g - 1);
+HXLINE(  48)				::String rarity = HX_("common",2b,75,2e,c7);
+HXLINE(  49)				if ((i < commons)) {
+HXLINE(  50)					rarity = HX_("common",2b,75,2e,c7);
             				}
             				else {
-HXLINE(  50)					if (((i - commons) < uncommons)) {
-HXLINE(  51)						rarity = HX_("uncommon",44,a4,75,c9);
+HXLINE(  51)					if (((i - commons) < uncommons)) {
+HXLINE(  52)						rarity = HX_("uncommon",44,a4,75,c9);
             					}
             					else {
-HXLINE(  52)						if ((((i - commons) - uncommons) < rares)) {
-HXLINE(  53)							rarity = HX_("rare",22,51,a4,4b);
+HXLINE(  53)						if ((((i - commons) - uncommons) < rares)) {
+HXLINE(  54)							rarity = HX_("rare",22,51,a4,4b);
             						}
             					}
             				}
-HXLINE(  54)				bool _hx_tmp;
-HXDLIN(  54)				if ((rarity == HX_("rare",22,51,a4,4b))) {
-HXLINE(  54)					_hx_tmp = (::Std_obj::random(8) == 0);
+HXLINE(  55)				bool _hx_tmp;
+HXDLIN(  55)				if ((rarity == HX_("rare",22,51,a4,4b))) {
+HXLINE(  55)					_hx_tmp = (::Std_obj::random(8) == 0);
             				}
             				else {
-HXLINE(  54)					_hx_tmp = false;
+HXLINE(  55)					_hx_tmp = false;
             				}
-HXDLIN(  54)				if (_hx_tmp) {
-HXLINE(  55)					rarity = HX_("mythic",ba,8b,5e,8d);
+HXDLIN(  55)				if (_hx_tmp) {
+HXLINE(  56)					rarity = HX_("mythic",ba,8b,5e,8d);
             				}
-HXLINE(  56)				::Array< ::Dynamic> _hx_tmp1 = this->cardsInside;
-HXDLIN(  56)				_hx_tmp1->push(this->getBoosterValidCard(rarity,null()));
+HXLINE(  57)				::Array< ::Dynamic> _hx_tmp1 = this->cardsInside;
+HXDLIN(  57)				_hx_tmp1->push(this->getBoosterValidCard(rarity,null()));
             			}
             		}
-HXLINE(  59)		 ::Dynamic tmp3;
-HXDLIN(  59)		if (::hx::IsNotNull( spreads )) {
-HXLINE(  59)			tmp3 = spreads->__Field(HX_("wildcards",59,c5,c6,4b),::hx::paccDynamic);
-            		}
-            		else {
-HXLINE(  59)			tmp3 = null();
-            		}
-HXDLIN(  59)		int _hx_tmp2;
-HXDLIN(  59)		if (::hx::IsNotNull( tmp3 )) {
-HXLINE(  59)			_hx_tmp2 = ( (int)(tmp3) );
+HXLINE(  60)		 ::Dynamic tmp3;
+HXDLIN(  60)		if (::hx::IsNotNull( spreads )) {
+HXLINE(  60)			tmp3 = spreads->__Field(HX_("wildcards",59,c5,c6,4b),::hx::paccDynamic);
             		}
             		else {
-HXLINE(  59)			_hx_tmp2 = 0;
+HXLINE(  60)			tmp3 = null();
             		}
-HXDLIN(  59)		if ((_hx_tmp2 >= 0)) {
-HXLINE(  60)			int _g2 = 0;
-HXDLIN(  60)			int _g3;
-HXDLIN(  60)			 ::Dynamic tmp4;
-HXDLIN(  60)			if (::hx::IsNotNull( spreads )) {
-HXLINE(  60)				tmp4 = spreads->__Field(HX_("wildcards",59,c5,c6,4b),::hx::paccDynamic);
-            			}
-            			else {
-HXLINE(  60)				tmp4 = null();
-            			}
-HXDLIN(  60)			if (::hx::IsNotNull( tmp4 )) {
-HXLINE(  60)				_g3 = ( (int)(tmp4) );
-            			}
-            			else {
-HXLINE(  60)				_g3 = 0;
-            			}
-HXDLIN(  60)			while((_g2 < _g3)){
-HXLINE(  60)				_g2 = (_g2 + 1);
-HXDLIN(  60)				int i1 = (_g2 - 1);
-HXLINE(  61)				 ::Dynamic wildCardDist = this->determineWildcardDistribution();
-HXLINE(  62)				::Array< ::Dynamic> _hx_tmp3 = this->cardsInside;
-HXDLIN(  62)				_hx_tmp3->push(this->getBoosterValidCard(( (::String)(wildCardDist->__Field(HX_("rarity",2b,cc,37,ba),::hx::paccDynamic)) ),wildCardDist->__Field(HX_("doublefaced",76,6c,32,ed),::hx::paccDynamic)));
-            			}
-            		}
-HXLINE(  65)		 ::Dynamic tmp5;
-HXDLIN(  65)		if (::hx::IsNotNull( spreads )) {
-HXLINE(  65)			tmp5 = spreads->__Field(HX_("foils",87,e5,8d,04),::hx::paccDynamic);
+HXDLIN(  60)		int _hx_tmp2;
+HXDLIN(  60)		if (::hx::IsNotNull( tmp3 )) {
+HXLINE(  60)			_hx_tmp2 = ( (int)(tmp3) );
             		}
             		else {
-HXLINE(  65)			tmp5 = null();
+HXLINE(  60)			_hx_tmp2 = 0;
             		}
-HXDLIN(  65)		int _hx_tmp4;
-HXDLIN(  65)		if (::hx::IsNotNull( tmp5 )) {
-HXLINE(  65)			_hx_tmp4 = ( (int)(tmp5) );
+HXDLIN(  60)		if ((_hx_tmp2 >= 0)) {
+HXLINE(  61)			int _g2 = 0;
+HXDLIN(  61)			int _g3;
+HXDLIN(  61)			 ::Dynamic tmp4;
+HXDLIN(  61)			if (::hx::IsNotNull( spreads )) {
+HXLINE(  61)				tmp4 = spreads->__Field(HX_("wildcards",59,c5,c6,4b),::hx::paccDynamic);
+            			}
+            			else {
+HXLINE(  61)				tmp4 = null();
+            			}
+HXDLIN(  61)			if (::hx::IsNotNull( tmp4 )) {
+HXLINE(  61)				_g3 = ( (int)(tmp4) );
+            			}
+            			else {
+HXLINE(  61)				_g3 = 0;
+            			}
+HXDLIN(  61)			while((_g2 < _g3)){
+HXLINE(  61)				_g2 = (_g2 + 1);
+HXDLIN(  61)				int i1 = (_g2 - 1);
+HXLINE(  62)				 ::Dynamic wildCardDist = this->determineWildcardDistribution();
+HXLINE(  63)				::Array< ::Dynamic> _hx_tmp3 = this->cardsInside;
+HXDLIN(  63)				_hx_tmp3->push(this->getBoosterValidCard(( (::String)(wildCardDist->__Field(HX_("rarity",2b,cc,37,ba),::hx::paccDynamic)) ),wildCardDist->__Field(HX_("doublefaced",76,6c,32,ed),::hx::paccDynamic)));
+            			}
+            		}
+HXLINE(  66)		 ::Dynamic tmp5;
+HXDLIN(  66)		if (::hx::IsNotNull( spreads )) {
+HXLINE(  66)			tmp5 = spreads->__Field(HX_("foils",87,e5,8d,04),::hx::paccDynamic);
             		}
             		else {
-HXLINE(  65)			_hx_tmp4 = 0;
+HXLINE(  66)			tmp5 = null();
             		}
-HXDLIN(  65)		if ((_hx_tmp4 >= 0)) {
-HXLINE(  66)			int _g4 = 0;
-HXDLIN(  66)			int _g5;
-HXDLIN(  66)			 ::Dynamic tmp6;
-HXDLIN(  66)			if (::hx::IsNotNull( spreads )) {
-HXLINE(  66)				tmp6 = spreads->__Field(HX_("foils",87,e5,8d,04),::hx::paccDynamic);
-            			}
-            			else {
-HXLINE(  66)				tmp6 = null();
-            			}
-HXDLIN(  66)			if (::hx::IsNotNull( tmp6 )) {
-HXLINE(  66)				_g5 = ( (int)(tmp6) );
-            			}
-            			else {
-HXLINE(  66)				_g5 = 0;
-            			}
-HXDLIN(  66)			while((_g4 < _g5)){
-HXLINE(  66)				_g4 = (_g4 + 1);
-HXDLIN(  66)				int i2 = (_g4 - 1);
-HXLINE(  67)				::Array< ::Dynamic> _hx_tmp5 = this->cardsInside;
-HXDLIN(  67)				_hx_tmp5->push(this->getBoosterFoilCard());
-            			}
-            		}
-HXLINE(  69)		 ::Dynamic tmp7;
-HXDLIN(  69)		if (::hx::IsNotNull( spreads )) {
-HXLINE(  69)			tmp7 = spreads->__Field(HX_("lands",28,28,b8,6f),::hx::paccDynamic);
+HXDLIN(  66)		int _hx_tmp4;
+HXDLIN(  66)		if (::hx::IsNotNull( tmp5 )) {
+HXLINE(  66)			_hx_tmp4 = ( (int)(tmp5) );
             		}
             		else {
-HXLINE(  69)			tmp7 = null();
+HXLINE(  66)			_hx_tmp4 = 0;
             		}
-HXDLIN(  69)		int _hx_tmp6;
-HXDLIN(  69)		if (::hx::IsNotNull( tmp7 )) {
-HXLINE(  69)			_hx_tmp6 = ( (int)(tmp7) );
+HXDLIN(  66)		if ((_hx_tmp4 >= 0)) {
+HXLINE(  67)			int _g4 = 0;
+HXDLIN(  67)			int _g5;
+HXDLIN(  67)			 ::Dynamic tmp6;
+HXDLIN(  67)			if (::hx::IsNotNull( spreads )) {
+HXLINE(  67)				tmp6 = spreads->__Field(HX_("foils",87,e5,8d,04),::hx::paccDynamic);
+            			}
+            			else {
+HXLINE(  67)				tmp6 = null();
+            			}
+HXDLIN(  67)			if (::hx::IsNotNull( tmp6 )) {
+HXLINE(  67)				_g5 = ( (int)(tmp6) );
+            			}
+            			else {
+HXLINE(  67)				_g5 = 0;
+            			}
+HXDLIN(  67)			while((_g4 < _g5)){
+HXLINE(  67)				_g4 = (_g4 + 1);
+HXDLIN(  67)				int i2 = (_g4 - 1);
+HXLINE(  68)				::Array< ::Dynamic> _hx_tmp5 = this->cardsInside;
+HXDLIN(  68)				_hx_tmp5->push(this->getBoosterFoilCard());
+            			}
+            		}
+HXLINE(  70)		 ::Dynamic tmp7;
+HXDLIN(  70)		if (::hx::IsNotNull( spreads )) {
+HXLINE(  70)			tmp7 = spreads->__Field(HX_("lands",28,28,b8,6f),::hx::paccDynamic);
             		}
             		else {
-HXLINE(  69)			_hx_tmp6 = 1;
+HXLINE(  70)			tmp7 = null();
             		}
-HXDLIN(  69)		if ((_hx_tmp6 >= 1)) {
-HXLINE(  70)			int _g6 = 0;
-HXDLIN(  70)			int _g7;
-HXDLIN(  70)			 ::Dynamic tmp8;
-HXDLIN(  70)			if (::hx::IsNotNull( spreads )) {
-HXLINE(  70)				tmp8 = spreads->__Field(HX_("lands",28,28,b8,6f),::hx::paccDynamic);
+HXDLIN(  70)		int _hx_tmp6;
+HXDLIN(  70)		if (::hx::IsNotNull( tmp7 )) {
+HXLINE(  70)			_hx_tmp6 = ( (int)(tmp7) );
+            		}
+            		else {
+HXLINE(  70)			_hx_tmp6 = 1;
+            		}
+HXDLIN(  70)		if ((_hx_tmp6 >= 1)) {
+HXLINE(  71)			int _g6 = 0;
+HXDLIN(  71)			int _g7;
+HXDLIN(  71)			 ::Dynamic tmp8;
+HXDLIN(  71)			if (::hx::IsNotNull( spreads )) {
+HXLINE(  71)				tmp8 = spreads->__Field(HX_("lands",28,28,b8,6f),::hx::paccDynamic);
             			}
             			else {
-HXLINE(  70)				tmp8 = null();
+HXLINE(  71)				tmp8 = null();
             			}
-HXDLIN(  70)			if (::hx::IsNotNull( tmp8 )) {
-HXLINE(  70)				_g7 = ( (int)(tmp8) );
+HXDLIN(  71)			if (::hx::IsNotNull( tmp8 )) {
+HXLINE(  71)				_g7 = ( (int)(tmp8) );
             			}
             			else {
-HXLINE(  70)				_g7 = 1;
+HXLINE(  71)				_g7 = 1;
             			}
-HXDLIN(  70)			while((_g6 < _g7)){
-HXLINE(  70)				_g6 = (_g6 + 1);
-HXDLIN(  70)				int i3 = (_g6 - 1);
-HXLINE(  71)				Float replaceByCommon = (( (Float)(::Std_obj::random(100)) ) / ( (Float)(100) ));
-HXDLIN(  71)				 ::Dynamic tmp9;
-HXDLIN(  71)				if (::hx::IsNotNull( spreads )) {
-HXLINE(  71)					tmp9 = spreads->__Field(HX_("commonReplacesLand",15,b9,ed,16),::hx::paccDynamic);
+HXDLIN(  71)			while((_g6 < _g7)){
+HXLINE(  71)				_g6 = (_g6 + 1);
+HXDLIN(  71)				int i3 = (_g6 - 1);
+HXLINE(  72)				Float replaceByCommon = (( (Float)(::Std_obj::random(100)) ) / ( (Float)(100) ));
+HXDLIN(  72)				 ::Dynamic tmp9;
+HXDLIN(  72)				if (::hx::IsNotNull( spreads )) {
+HXLINE(  72)					tmp9 = spreads->__Field(HX_("commonReplacesLand",15,b9,ed,16),::hx::paccDynamic);
             				}
             				else {
-HXLINE(  71)					tmp9 = null();
+HXLINE(  72)					tmp9 = null();
             				}
-HXDLIN(  71)				Float replaceByCommon1;
-HXDLIN(  71)				if (::hx::IsNotNull( tmp9 )) {
-HXLINE(  71)					replaceByCommon1 = ( (Float)(tmp9) );
-            				}
-            				else {
-HXLINE(  71)					replaceByCommon1 = ((Float)0.0);
-            				}
-HXDLIN(  71)				bool replaceByCommon2 = !((replaceByCommon >= replaceByCommon1));
-HXLINE(  72)				if (replaceByCommon2) {
-HXLINE(  73)					::Array< ::Dynamic> _hx_tmp7 = this->cardsInside;
-HXDLIN(  73)					_hx_tmp7->push(::scryfall::search::cards::_QuerySearchResult::CardCollection_Impl__obj::randomQuery(::server::play::board::cards::BoosterPack_obj::get_setCards(),HX_("-t:basic r:common",58,1c,ae,c6)));
+HXDLIN(  72)				Float replaceByCommon1;
+HXDLIN(  72)				if (::hx::IsNotNull( tmp9 )) {
+HXLINE(  72)					replaceByCommon1 = ( (Float)(tmp9) );
             				}
             				else {
-HXLINE(  75)					::Array< ::Dynamic> _hx_tmp8 = this->cardsInside;
-HXDLIN(  75)					_hx_tmp8->push(this->getBoosterValidBasicLandCard());
+HXLINE(  72)					replaceByCommon1 = ((Float)0.0);
+            				}
+HXDLIN(  72)				bool replaceByCommon2 = !((replaceByCommon >= replaceByCommon1));
+HXLINE(  73)				if (replaceByCommon2) {
+HXLINE(  74)					::Array< ::Dynamic> _hx_tmp7 = this->cardsInside;
+HXDLIN(  74)					_hx_tmp7->push(::scryfall::search::cards::_QuerySearchResult::CardCollection_Impl__obj::randomQuery(::server::play::board::cards::BoosterPack_obj::get_setCards(),HX_("-t:basic r:common",58,1c,ae,c6)));
+            				}
+            				else {
+HXLINE(  76)					::Array< ::Dynamic> _hx_tmp8 = this->cardsInside;
+HXDLIN(  76)					_hx_tmp8->push(this->getBoosterValidBasicLandCard());
             				}
             			}
             		}
@@ -274,30 +277,30 @@ bool BoosterPack_obj::_hx_isInstanceOf(int inClassId) {
 }
 
  ::Dynamic BoosterPack_obj::determineWildcardDistribution(){
-            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_80_determineWildcardDistribution)
-HXLINE(  81)		Float target = (( (Float)(::Std_obj::random(1000)) ) / ( (Float)(10) ));
-HXLINE(  82)		target = (target - ((Float)41.7));
-HXDLIN(  82)		if ((target <= 0)) {
-HXLINE(  83)			return  ::Dynamic(::hx::Anon_obj::Create(1)
+            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_81_determineWildcardDistribution)
+HXLINE(  82)		Float target = (( (Float)(::Std_obj::random(1000)) ) / ( (Float)(10) ));
+HXLINE(  83)		target = (target - ((Float)41.7));
+HXDLIN(  83)		if ((target <= 0)) {
+HXLINE(  84)			return  ::Dynamic(::hx::Anon_obj::Create(1)
             				->setFixed(0,HX_("rarity",2b,cc,37,ba),HX_("common",2b,75,2e,c7)));
             		}
-HXLINE(  84)		target = (target - ((Float)33.4));
-HXDLIN(  84)		if ((target <= 0)) {
-HXLINE(  85)			return  ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE(  85)		target = (target - ((Float)33.4));
+HXDLIN(  85)		if ((target <= 0)) {
+HXLINE(  86)			return  ::Dynamic(::hx::Anon_obj::Create(1)
             				->setFixed(0,HX_("rarity",2b,cc,37,ba),HX_("uncommon",44,a4,75,c9)));
             		}
-HXLINE(  86)		target = (target - ((Float)8.3));
-HXDLIN(  86)		if ((target <= 0)) {
-HXLINE(  87)			return  ::Dynamic(::hx::Anon_obj::Create(2)
+HXLINE(  87)		target = (target - ((Float)8.3));
+HXDLIN(  87)		if ((target <= 0)) {
+HXLINE(  88)			return  ::Dynamic(::hx::Anon_obj::Create(2)
             				->setFixed(0,HX_("rarity",2b,cc,37,ba),HX_("uncommon",44,a4,75,c9))
             				->setFixed(1,HX_("doublefaced",76,6c,32,ed),true));
             		}
-HXLINE(  88)		target = (target - ((Float)6.7));
-HXDLIN(  88)		if ((target <= 0)) {
-HXLINE(  89)			return  ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE(  89)		target = (target - ((Float)6.7));
+HXDLIN(  89)		if ((target <= 0)) {
+HXLINE(  90)			return  ::Dynamic(::hx::Anon_obj::Create(1)
             				->setFixed(0,HX_("rarity",2b,cc,37,ba),HX_("rare",22,51,a4,4b)));
             		}
-HXLINE(  90)		return  ::Dynamic(::hx::Anon_obj::Create(2)
+HXLINE(  91)		return  ::Dynamic(::hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("rarity",2b,cc,37,ba),HX_("mythic",ba,8b,5e,8d))
             			->setFixed(1,HX_("doublefaced",76,6c,32,ed),(::Std_obj::random(1000) <= 11)));
             	}
@@ -306,8 +309,8 @@ HXLINE(  90)		return  ::Dynamic(::hx::Anon_obj::Create(2)
 HX_DEFINE_DYNAMIC_FUNC0(BoosterPack_obj,determineWildcardDistribution,return )
 
  ::scryfall::Card BoosterPack_obj::chooseCard(int index){
-            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_94_chooseCard)
-HXDLIN(  94)		return this->cardsInside->__get(::hx::Mod(index,this->cardsInside->length)).StaticCast<  ::scryfall::Card >();
+            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_95_chooseCard)
+HXDLIN(  95)		return this->cardsInside->__get(::hx::Mod(index,this->cardsInside->length)).StaticCast<  ::scryfall::Card >();
             	}
 
 
@@ -316,33 +319,33 @@ HX_DEFINE_DYNAMIC_FUNC1(BoosterPack_obj,chooseCard,return )
  ::scryfall::Card BoosterPack_obj::getBoosterValidCard(::String rarity, ::Dynamic __o_doublefaced){
             		 ::Dynamic doublefaced = __o_doublefaced;
             		if (::hx::IsNull(__o_doublefaced)) doublefaced = false;
-            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_97_getBoosterValidCard)
-HXLINE(  98)		::String suffix = HX_("",00,00,00,00);
-HXLINE(  99)		if (( (bool)(doublefaced) )) {
-HXLINE( 100)			suffix = HX_("is:dfc",91,33,30,59);
+            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_98_getBoosterValidCard)
+HXLINE(  99)		::String suffix = HX_("",00,00,00,00);
+HXLINE( 100)		if (( (bool)(doublefaced) )) {
+HXLINE( 101)			suffix = HX_("is:dfc",91,33,30,59);
             		}
-HXLINE( 101)		return ::scryfall::search::cards::_QuerySearchResult::CardCollection_Impl__obj::randomQuery(::server::play::board::cards::BoosterPack_obj::get_setCards(),(((HX_("r:",88,63,00,00) + rarity) + HX_(" ",20,00,00,00)) + suffix));
+HXLINE( 102)		return ::scryfall::search::cards::_QuerySearchResult::CardCollection_Impl__obj::randomQuery(::server::play::board::cards::BoosterPack_obj::get_setCards(),(((HX_("r:",88,63,00,00) + rarity) + HX_(" ",20,00,00,00)) + suffix));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(BoosterPack_obj,getBoosterValidCard,return )
 
  ::scryfall::Card BoosterPack_obj::getBoosterValidBasicLandCard(){
-            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_105_getBoosterValidBasicLandCard)
-HXDLIN( 105)		return ::scryfall::search::ScrySearch_obj::randomCard((HX_("t:basic e:",ad,f1,07,45) + ::server::play::board::cards::BoosterPack_obj::setCode));
+            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_106_getBoosterValidBasicLandCard)
+HXDLIN( 106)		return ::scryfall::search::ScrySearch_obj::randomCard((HX_("t:basic e:",ad,f1,07,45) + ::server::play::board::cards::BoosterPack_obj::setCode));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(BoosterPack_obj,getBoosterValidBasicLandCard,return )
 
  ::scryfall::Card BoosterPack_obj::getBoosterFoilCard(){
-            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_108_getBoosterFoilCard)
-HXLINE( 109)		bool borderless = (::Std_obj::random(200) == 0);
-HXLINE( 110)		::String suffix = HX_("",00,00,00,00);
-HXLINE( 111)		if (borderless) {
-HXLINE( 112)			suffix = HX_("is:fetchland border:borderless",c8,66,4f,cf);
+            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_109_getBoosterFoilCard)
+HXLINE( 110)		bool borderless = (::Std_obj::random(200) == 0);
+HXLINE( 111)		::String suffix = HX_("",00,00,00,00);
+HXLINE( 112)		if (borderless) {
+HXLINE( 113)			suffix = HX_("is:fetchland border:borderless",c8,66,4f,cf);
             		}
-HXLINE( 113)		return ::server::play::board::cards::BoosterPack_obj::getRandomCard((((HX_("-t:basic e:",1a,cc,20,ec) + ::server::play::board::cards::BoosterPack_obj::setCode) + HX_(" is:booster ",c0,0c,17,12)) + suffix));
+HXLINE( 114)		return ::server::play::board::cards::BoosterPack_obj::getRandomCard((((HX_("-t:basic e:",1a,cc,20,ec) + ::server::play::board::cards::BoosterPack_obj::setCode) + HX_(" is:booster ",c0,0c,17,12)) + suffix));
             	}
 
 
@@ -374,8 +377,8 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC0(BoosterPack_obj,get_setCards,return )
 ::String BoosterPack_obj::setCode;
 
  ::scryfall::Card BoosterPack_obj::getRandomCard(::String query){
-            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_117_getRandomCard)
-HXDLIN( 117)		return ::scryfall::search::ScrySearch_obj::randomCard(query);
+            	HX_STACKFRAME(&_hx_pos_c0620774913b577c_118_getRandomCard)
+HXDLIN( 118)		return ::scryfall::search::ScrySearch_obj::randomCard(query);
             	}
 
 

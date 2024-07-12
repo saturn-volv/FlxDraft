@@ -6,14 +6,17 @@
 #include <hxcpp.h>
 #endif
 
-#ifndef INCLUDED_flixel_FlxSprite
-#include <flixel/FlxSprite.h>
+#ifndef INCLUDED_flixel_addons_effects_FlxSkewedSprite
+#include <flixel/addons/effects/FlxSkewedSprite.h>
 #endif
 HX_DECLARE_CLASS3(client,play,game_pieces,CardSprite)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
+HX_DECLARE_CLASS3(flixel,addons,effects,FlxSkewedSprite)
+HX_DECLARE_CLASS2(flixel,math,FlxBasePoint)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
+HX_DECLARE_CLASS2(flixel,util,IFlxPooled)
 HX_DECLARE_CLASS1(scryfall,Card)
 HX_DECLARE_CLASS1(scryfall,Result)
 
@@ -22,10 +25,10 @@ namespace play{
 namespace game_pieces{
 
 
-class HXCPP_CLASS_ATTRIBUTES CardSprite_obj : public  ::flixel::FlxSprite_obj
+class HXCPP_CLASS_ATTRIBUTES CardSprite_obj : public  ::flixel::addons::effects::FlxSkewedSprite_obj
 {
 	public:
-		typedef  ::flixel::FlxSprite_obj super;
+		typedef  ::flixel::addons::effects::FlxSkewedSprite_obj super;
 		typedef CardSprite_obj OBJ_;
 		CardSprite_obj();
 
@@ -57,8 +60,11 @@ class HXCPP_CLASS_ATTRIBUTES CardSprite_obj : public  ::flixel::FlxSprite_obj
 		::String __ToString() const { return HX_("CardSprite",15,ae,f9,ef); }
 
 		static void __boot();
+		static int MARGIN_X;
+		static int MARGIN_Y;
 		static Float cardWidth;
 		static Float cardHeight;
+		static Float MOUSE_INFLUENCE;
 		static  ::client::play::game_pieces::CardSprite generateShowcaseCard( ::client::play::game_pieces::CardSprite cardSpr);
 		static ::Dynamic generateShowcaseCard_dyn();
 
@@ -67,6 +73,7 @@ class HXCPP_CLASS_ATTRIBUTES CardSprite_obj : public  ::flixel::FlxSprite_obj
 		 ::Dynamic _cardWidth;
 		int _gameIndex;
 		bool showcase;
+		bool _trackingMouse;
 		bool set_showcase(bool v);
 		::Dynamic set_showcase_dyn();
 
@@ -74,6 +81,7 @@ class HXCPP_CLASS_ATTRIBUTES CardSprite_obj : public  ::flixel::FlxSprite_obj
 		int set__gameIndex(int index);
 		::Dynamic set__gameIndex_dyn();
 
+		Float _angularDrag;
 		void update(Float elapsed);
 
 		void offHover();
@@ -81,6 +89,15 @@ class HXCPP_CLASS_ATTRIBUTES CardSprite_obj : public  ::flixel::FlxSprite_obj
 
 		void onHover();
 		::Dynamic onHover_dyn();
+
+		void startTracking();
+		::Dynamic startTracking_dyn();
+
+		void stopTracking();
+		::Dynamic stopTracking_dyn();
+
+		 ::flixel::math::FlxBasePoint getRelativeMousePosition();
+		::Dynamic getRelativeMousePosition_dyn();
 
 };
 

@@ -15,6 +15,7 @@ HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
+HX_DECLARE_CLASS3(flixel,addons,effects,FlxSkewedSprite)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedSpriteGroup)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
@@ -57,10 +58,9 @@ class HXCPP_CLASS_ATTRIBUTES CardState_obj : public  ::flixel::FlxState_obj
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_("CardState",01,96,c3,78); }
 
-		static void __boot();
-		static int MARGIN_X;
-		static int MARGIN_Y;
 		 ::flixel::group::FlxTypedSpriteGroup cards;
+		bool holdingCard;
+		 ::client::play::game_pieces::CardSprite cardOnCursor;
 		 ::client::play::game_pieces::CardSprite selectedCard;
 		void create();
 

@@ -9308,16 +9308,53 @@
   <file name="src/client/play/game_pieces/CardSprite.cpp" >
    <depend name="include/client/play/game_pieces/CardSprite.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxCamera.h"/>
    <depend name="include/flixel/FlxG.h"/>
    <depend name="include/flixel/FlxObject.h"/>
    <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/addons/effects/FlxSkewedSprite.h"/>
+   <depend name="include/flixel/input/FlxPointer.h"/>
+   <depend name="include/flixel/input/IFlxInputManager.h"/>
+   <depend name="include/flixel/input/mouse/FlxMouse.h"/>
+   <depend name="include/flixel/math/FlxBasePoint.h"/>
+   <depend name="include/flixel/util/FlxPool.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
+   <depend name="include/flixel/util/IFlxPool.h"/>
+   <depend name="include/flixel/util/IFlxPooled.h"/>
    <depend name="include/haxe/Log.h"/>
    <depend name="include/lime/app/Future.h"/>
+   <depend name="include/lime/math/Vector2.h"/>
    <depend name="include/openfl/display/BitmapData.h"/>
    <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/geom/Matrix.h"/>
    <depend name="include/scryfall/Card.h"/>
    <depend name="include/scryfall/Result.h"/>
+  </file>
+  <file name="src/flixel/addons/effects/FlxSkewedSprite.cpp" >
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxCamera.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/addons/effects/FlxSkewedSprite.h"/>
+   <depend name="include/flixel/animation/FlxAnimation.h"/>
+   <depend name="include/flixel/animation/FlxAnimationController.h"/>
+   <depend name="include/flixel/animation/FlxBaseAnimation.h"/>
+   <depend name="include/flixel/graphics/frames/FlxFrame.h"/>
+   <depend name="include/flixel/graphics/tile/FlxGraphicsShader.h"/>
+   <depend name="include/flixel/math/FlxBasePoint.h"/>
+   <depend name="include/flixel/math/FlxMatrix.h"/>
+   <depend name="include/flixel/util/FlxDestroyUtil.h"/>
+   <depend name="include/flixel/util/FlxPool.h"/>
+   <depend name="include/flixel/util/IFlxDestroyable.h"/>
+   <depend name="include/flixel/util/IFlxPool.h"/>
+   <depend name="include/flixel/util/IFlxPooled.h"/>
+   <depend name="include/openfl/display/BitmapData.h"/>
+   <depend name="include/openfl/display/GraphicsShader.h"/>
+   <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/display/Shader.h"/>
+   <depend name="include/openfl/geom/ColorTransform.h"/>
+   <depend name="include/openfl/geom/Matrix.h"/>
   </file>
   <file name="src/flixel/FlxSprite.cpp" >
    <depend name="include/Std.h"/>
@@ -9419,19 +9456,24 @@
    <depend name="include/flixel/FlxObject.h"/>
    <depend name="include/flixel/FlxSprite.h"/>
    <depend name="include/flixel/FlxState.h"/>
+   <depend name="include/flixel/addons/effects/FlxSkewedSprite.h"/>
    <depend name="include/flixel/group/FlxTypedGroup.h"/>
    <depend name="include/flixel/group/FlxTypedSpriteGroup.h"/>
    <depend name="include/flixel/input/FlxBaseKeyList.h"/>
+   <depend name="include/flixel/input/FlxInput.h"/>
    <depend name="include/flixel/input/FlxKeyManager.h"/>
    <depend name="include/flixel/input/FlxPointer.h"/>
+   <depend name="include/flixel/input/IFlxInput.h"/>
    <depend name="include/flixel/input/IFlxInputManager.h"/>
    <depend name="include/flixel/input/keyboard/FlxKeyList.h"/>
    <depend name="include/flixel/input/keyboard/FlxKeyboard.h"/>
    <depend name="include/flixel/input/mouse/FlxMouse.h"/>
+   <depend name="include/flixel/input/mouse/FlxMouseButton.h"/>
    <depend name="include/flixel/system/debug/log/LogStyle.h"/>
    <depend name="include/flixel/system/frontEnds/LogFrontEnd.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/flixel/util/typeLimit/_NextState/NextState_Impl_.h"/>
+   <depend name="include/lime/ui/MouseCursor.h"/>
    <depend name="include/openfl/display/DisplayObject.h"/>
    <depend name="include/openfl/display/DisplayObjectContainer.h"/>
    <depend name="include/openfl/display/IBitmapDrawable.h"/>
@@ -9439,6 +9481,8 @@
    <depend name="include/openfl/display/Sprite.h"/>
    <depend name="include/openfl/events/EventDispatcher.h"/>
    <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/ui/Mouse.h"/>
+   <depend name="include/openfl/ui/_MouseCursor/MouseCursor_Impl_.h"/>
    <depend name="include/scryfall/Card.h"/>
    <depend name="include/scryfall/Result.h"/>
    <depend name="include/server/play/Game.h"/>
@@ -9497,6 +9541,7 @@
   </file>
   <file name="src/backend/http/APIFunctions.cpp" >
    <depend name="include/backend/http/APIFunctions.h"/>
+   <depend name="include/haxe/Exception.h"/>
    <depend name="include/haxe/http/HttpBase.h"/>
    <depend name="include/sys/Http.h"/>
   </file>
@@ -9588,6 +9633,38 @@
    <depend name="include/openfl/utils/IDataOutput.h"/>
    <depend name="include/openfl/utils/_ByteArray/ByteArray_Impl_.h"/>
    <depend name="include/sys/FileSystem.h"/>
+  </file>
+  <file name="src/__ASSET__flixel_images_transitions_square_png.cpp" >
+   <depend name="include/__ASSET__flixel_images_transitions_square_png.h"/>
+   <depend name="include/haxe/Resource.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/lime/graphics/Image.h"/>
+   <depend name="include/lime/graphics/ImageBuffer.h"/>
+   <depend name="include/lime/graphics/ImageType.h"/>
+  </file>
+  <file name="src/__ASSET__flixel_images_transitions_diamond_png.cpp" >
+   <depend name="include/__ASSET__flixel_images_transitions_diamond_png.h"/>
+   <depend name="include/haxe/Resource.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/lime/graphics/Image.h"/>
+   <depend name="include/lime/graphics/ImageBuffer.h"/>
+   <depend name="include/lime/graphics/ImageType.h"/>
+  </file>
+  <file name="src/__ASSET__flixel_images_transitions_diagonal_gradient_png.cpp" >
+   <depend name="include/__ASSET__flixel_images_transitions_diagonal_gradient_png.h"/>
+   <depend name="include/haxe/Resource.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/lime/graphics/Image.h"/>
+   <depend name="include/lime/graphics/ImageBuffer.h"/>
+   <depend name="include/lime/graphics/ImageType.h"/>
+  </file>
+  <file name="src/__ASSET__flixel_images_transitions_circle_png.cpp" >
+   <depend name="include/__ASSET__flixel_images_transitions_circle_png.h"/>
+   <depend name="include/haxe/Resource.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/lime/graphics/Image.h"/>
+   <depend name="include/lime/graphics/ImageBuffer.h"/>
+   <depend name="include/lime/graphics/ImageType.h"/>
   </file>
   <file name="src/__ASSET__flixel_images_logo_default_png.cpp" >
    <depend name="include/__ASSET__flixel_images_logo_default_png.h"/>
@@ -10459,13 +10536,16 @@
    <depend name="include/flixel/FlxSprite.h"/>
    <depend name="include/flixel/FlxObject.h"/>
    <depend name="include/flixel/math/FlxRect.h"/>
-   <depend name="include/client/play/CardState.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/backend/http/APIFunctions.h"/>
    <depend name="include/backend/encoding/ParentEncoding.h"/>
    <depend name="include/Xml.h"/>
    <depend name="include/haxe/SysTools.h"/>
    <depend name="include/openfl/text/Font.h"/>
+   <depend name="include/__ASSET__flixel_images_transitions_square_png.h"/>
+   <depend name="include/__ASSET__flixel_images_transitions_diamond_png.h"/>
+   <depend name="include/__ASSET__flixel_images_transitions_diagonal_gradient_png.h"/>
+   <depend name="include/__ASSET__flixel_images_transitions_circle_png.h"/>
    <depend name="include/__ASSET__flixel_images_logo_default_png.h"/>
    <depend name="include/__ASSET__flixel_images_ui_button_png.h"/>
    <depend name="include/__ASSET__flixel_fonts_monsterrat_ttf.h"/>
@@ -10535,6 +10615,10 @@
 <file name="src/resources/__res_32.cpp" tags="optim-none" />
 <file name="src/resources/__res_33.cpp" tags="optim-none" />
 <file name="src/resources/__res_34.cpp" tags="optim-none" />
+<file name="src/resources/__res_35.cpp" tags="optim-none" />
+<file name="src/resources/__res_36.cpp" tags="optim-none" />
+<file name="src/resources/__res_37.cpp" tags="optim-none" />
+<file name="src/resources/__res_38.cpp" tags="optim-none" />
 </files>
 <files id="__externs__">
 </files>

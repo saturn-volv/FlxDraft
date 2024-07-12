@@ -4,6 +4,9 @@
 #ifndef INCLUDED_backend_http_APIFunctions
 #include <backend/http/APIFunctions.h>
 #endif
+#ifndef INCLUDED_haxe_Exception
+#include <haxe/Exception.h>
+#endif
 #ifndef INCLUDED_haxe_http_HttpBase
 #include <haxe/http/HttpBase.h>
 #endif
@@ -11,7 +14,7 @@
 #include <sys/Http.h>
 #endif
 
-HX_LOCAL_STACK_FRAME(_hx_pos_0737259f194fc4f7_11___default_requestFromURL,"backend.http.APIFunctions","__default_requestFromURL",0x83480ef5,"backend.http.APIFunctions.__default_requestFromURL","backend/http/APIFunctions.hx",11,0x0334b431)
+HX_LOCAL_STACK_FRAME(_hx_pos_0737259f194fc4f7_13___default_requestFromURL,"backend.http.APIFunctions","__default_requestFromURL",0x83480ef5,"backend.http.APIFunctions.__default_requestFromURL","backend/http/APIFunctions.hx",13,0x0334b431)
 namespace backend{
 namespace http{
 
@@ -34,8 +37,22 @@ bool APIFunctions_obj::_hx_isInstanceOf(int inClassId) {
 
 HX_BEGIN_DEFAULT_FUNC(__default_requestFromURL,APIFunctions_obj)
 ::String _hx_run(::String url){
-            	HX_STACKFRAME(&_hx_pos_0737259f194fc4f7_11___default_requestFromURL)
-HXDLIN(  11)		return ::sys::Http_obj::requestUrl(url);
+            	HX_STACKFRAME(&_hx_pos_0737259f194fc4f7_13___default_requestFromURL)
+HXDLIN(  13)		try {
+            			HX_STACK_CATCHABLE( ::Dynamic, 0);
+HXLINE(  14)			return ::sys::Http_obj::requestUrl(url);
+            		} catch( ::Dynamic _hx_e) {
+            			if (_hx_e.IsClass<  ::Dynamic >() ){
+            				HX_STACK_BEGIN_CATCH
+            				 ::Dynamic _g = _hx_e;
+HXLINE(  15)				 ::haxe::Exception e = ::haxe::Exception_obj::caught(_g);
+HXLINE(  16)				return ::sys::Http_obj::requestUrl(HX_("https://api.scryfall.com/cards/named?fuzzy=flbthp-the-lost",a1,53,8c,72));
+            			}
+            			else {
+            				HX_STACK_DO_THROW(_hx_e);
+            			}
+            		}
+HXLINE(  13)		return null();
             	}
 HX_END_LOCAL_FUNC1(return )
 HX_END_DEFAULT_FUNC

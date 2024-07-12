@@ -11,6 +11,9 @@
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
+#ifndef INCLUDED_flixel_FlxCamera
+#include <flixel/FlxCamera.h>
+#endif
 #ifndef INCLUDED_flixel_FlxG
 #include <flixel/FlxG.h>
 #endif
@@ -20,8 +23,32 @@
 #ifndef INCLUDED_flixel_FlxSprite
 #include <flixel/FlxSprite.h>
 #endif
+#ifndef INCLUDED_flixel_addons_effects_FlxSkewedSprite
+#include <flixel/addons/effects/FlxSkewedSprite.h>
+#endif
+#ifndef INCLUDED_flixel_input_FlxPointer
+#include <flixel/input/FlxPointer.h>
+#endif
+#ifndef INCLUDED_flixel_input_IFlxInputManager
+#include <flixel/input/IFlxInputManager.h>
+#endif
+#ifndef INCLUDED_flixel_input_mouse_FlxMouse
+#include <flixel/input/mouse/FlxMouse.h>
+#endif
+#ifndef INCLUDED_flixel_math_FlxBasePoint
+#include <flixel/math/FlxBasePoint.h>
+#endif
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
+#endif
 #ifndef INCLUDED_flixel_util_IFlxDestroyable
 #include <flixel/util/IFlxDestroyable.h>
+#endif
+#ifndef INCLUDED_flixel_util_IFlxPool
+#include <flixel/util/IFlxPool.h>
+#endif
+#ifndef INCLUDED_flixel_util_IFlxPooled
+#include <flixel/util/IFlxPooled.h>
 #endif
 #ifndef INCLUDED_haxe_Log
 #include <haxe/Log.h>
@@ -29,11 +56,17 @@
 #ifndef INCLUDED_lime_app_Future
 #include <lime/app/Future.h>
 #endif
+#ifndef INCLUDED_lime_math_Vector2
+#include <lime/math/Vector2.h>
+#endif
 #ifndef INCLUDED_openfl_display_BitmapData
 #include <openfl/display/BitmapData.h>
 #endif
 #ifndef INCLUDED_openfl_display_IBitmapDrawable
 #include <openfl/display/IBitmapDrawable.h>
+#endif
+#ifndef INCLUDED_openfl_geom_Matrix
+#include <openfl/geom/Matrix.h>
 #endif
 #ifndef INCLUDED_scryfall_Card
 #include <scryfall/Card.h>
@@ -42,65 +75,73 @@
 #include <scryfall/Result.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_77460ae1f01b4b32_14_new,"client.play.game_pieces.CardSprite","new",0xd51119da,"client.play.game_pieces.CardSprite.new","client/play/game_pieces/CardSprite.hx",14,0xe4bb09d5)
-HX_DEFINE_STACK_FRAME(_hx_pos_77460ae1f01b4b32_47_new,"client.play.game_pieces.CardSprite","new",0xd51119da,"client.play.game_pieces.CardSprite.new","client/play/game_pieces/CardSprite.hx",47,0xe4bb09d5)
-HX_DEFINE_STACK_FRAME(_hx_pos_77460ae1f01b4b32_53_new,"client.play.game_pieces.CardSprite","new",0xd51119da,"client.play.game_pieces.CardSprite.new","client/play/game_pieces/CardSprite.hx",53,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_24_set_showcase,"client.play.game_pieces.CardSprite","set_showcase",0x93c944f0,"client.play.game_pieces.CardSprite.set_showcase","client/play/game_pieces/CardSprite.hx",24,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_34_set__gameIndex,"client.play.game_pieces.CardSprite","set__gameIndex",0x6ac70b04,"client.play.game_pieces.CardSprite.set__gameIndex","client/play/game_pieces/CardSprite.hx",34,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_58_update,"client.play.game_pieces.CardSprite","update",0x179fe4cf,"client.play.game_pieces.CardSprite.update","client/play/game_pieces/CardSprite.hx",58,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_65_offHover,"client.play.game_pieces.CardSprite","offHover",0x986a0c13,"client.play.game_pieces.CardSprite.offHover","client/play/game_pieces/CardSprite.hx",65,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_70_onHover,"client.play.game_pieces.CardSprite","onHover",0xb81b1297,"client.play.game_pieces.CardSprite.onHover","client/play/game_pieces/CardSprite.hx",70,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_75_generateShowcaseCard,"client.play.game_pieces.CardSprite","generateShowcaseCard",0x3697aeb8,"client.play.game_pieces.CardSprite.generateShowcaseCard","client/play/game_pieces/CardSprite.hx",75,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_15_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",15,0xe4bb09d5)
-HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_16_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",16,0xe4bb09d5)
+HX_DEFINE_STACK_FRAME(_hx_pos_77460ae1f01b4b32_17_new,"client.play.game_pieces.CardSprite","new",0xd51119da,"client.play.game_pieces.CardSprite.new","client/play/game_pieces/CardSprite.hx",17,0xe4bb09d5)
+HX_DEFINE_STACK_FRAME(_hx_pos_77460ae1f01b4b32_55_new,"client.play.game_pieces.CardSprite","new",0xd51119da,"client.play.game_pieces.CardSprite.new","client/play/game_pieces/CardSprite.hx",55,0xe4bb09d5)
+HX_DEFINE_STACK_FRAME(_hx_pos_77460ae1f01b4b32_61_new,"client.play.game_pieces.CardSprite","new",0xd51119da,"client.play.game_pieces.CardSprite.new","client/play/game_pieces/CardSprite.hx",61,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_32_set_showcase,"client.play.game_pieces.CardSprite","set_showcase",0x93c944f0,"client.play.game_pieces.CardSprite.set_showcase","client/play/game_pieces/CardSprite.hx",32,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_42_set__gameIndex,"client.play.game_pieces.CardSprite","set__gameIndex",0x6ac70b04,"client.play.game_pieces.CardSprite.set__gameIndex","client/play/game_pieces/CardSprite.hx",42,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_67_update,"client.play.game_pieces.CardSprite","update",0x179fe4cf,"client.play.game_pieces.CardSprite.update","client/play/game_pieces/CardSprite.hx",67,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_86_offHover,"client.play.game_pieces.CardSprite","offHover",0x986a0c13,"client.play.game_pieces.CardSprite.offHover","client/play/game_pieces/CardSprite.hx",86,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_94_onHover,"client.play.game_pieces.CardSprite","onHover",0xb81b1297,"client.play.game_pieces.CardSprite.onHover","client/play/game_pieces/CardSprite.hx",94,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_107_startTracking,"client.play.game_pieces.CardSprite","startTracking",0x5e0aefb3,"client.play.game_pieces.CardSprite.startTracking","client/play/game_pieces/CardSprite.hx",107,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_113_stopTracking,"client.play.game_pieces.CardSprite","stopTracking",0xfc6d1c9f,"client.play.game_pieces.CardSprite.stopTracking","client/play/game_pieces/CardSprite.hx",113,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_128_getRelativeMousePosition,"client.play.game_pieces.CardSprite","getRelativeMousePosition",0xd62bef52,"client.play.game_pieces.CardSprite.getRelativeMousePosition","client/play/game_pieces/CardSprite.hx",128,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_119_generateShowcaseCard,"client.play.game_pieces.CardSprite","generateShowcaseCard",0x3697aeb8,"client.play.game_pieces.CardSprite.generateShowcaseCard","client/play/game_pieces/CardSprite.hx",119,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_18_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",18,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_19_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",19,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_21_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",21,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_22_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",22,0xe4bb09d5)
+HX_LOCAL_STACK_FRAME(_hx_pos_77460ae1f01b4b32_91_boot,"client.play.game_pieces.CardSprite","boot",0x91fe8578,"client.play.game_pieces.CardSprite.boot","client/play/game_pieces/CardSprite.hx",91,0xe4bb09d5)
 namespace client{
 namespace play{
 namespace game_pieces{
 
 void CardSprite_obj::__construct( ::scryfall::Card card, ::Dynamic graphic){
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_14_new)
-HXLINE(  32)		this->hovering = false;
-HXLINE(  22)		this->showcase = false;
-HXLINE(  42)		 ::client::play::game_pieces::CardSprite _gthis = ::hx::ObjectPtr<OBJ_>(this);
-HXLINE(  43)		super::__construct(0,0,graphic);
-HXLINE(  44)		this->_card = card;
-HXLINE(  45)		if (::hx::IsNull( graphic )) {
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_17_new)
+HXLINE(  66)		this->_angularDrag = ((Float)0);
+HXLINE(  40)		this->hovering = false;
+HXLINE(  30)		this->_trackingMouse = false;
+HXLINE(  28)		this->showcase = false;
+HXLINE(  50)		 ::client::play::game_pieces::CardSprite _gthis = ::hx::ObjectPtr<OBJ_>(this);
+HXLINE(  51)		super::__construct(0,0,graphic);
+HXLINE(  52)		this->_card = card;
+HXLINE(  53)		if (::hx::IsNull( graphic )) {
             			HX_BEGIN_LOCAL_FUNC_S1(::hx::LocalFunc,_hx_Closure_0, ::client::play::game_pieces::CardSprite,_gthis) HXARGC(1)
             			void _hx_run( ::openfl::display::BitmapData v){
-            				HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_47_new)
-HXLINE(  48)				_gthis->loadGraphic(v,null(),null(),null(),null(),null());
-HXLINE(  49)				_gthis->setGraphicSize(::client::play::game_pieces::CardSprite_obj::cardWidth,null());
-HXLINE(  50)				_gthis->updateHitbox();
-HXLINE(  51)				_gthis->prevWidth = ::client::play::game_pieces::CardSprite_obj::cardWidth;
-HXLINE(  52)				_gthis->_cardWidth = ::client::play::game_pieces::CardSprite_obj::cardWidth;
+            				HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_55_new)
+HXLINE(  56)				_gthis->loadGraphic(v,null(),null(),null(),null(),null());
+HXLINE(  57)				_gthis->setGraphicSize(::client::play::game_pieces::CardSprite_obj::cardWidth,null());
+HXLINE(  58)				_gthis->updateHitbox();
+HXLINE(  59)				_gthis->prevWidth = ::client::play::game_pieces::CardSprite_obj::cardWidth;
+HXLINE(  60)				_gthis->_cardWidth = ::client::play::game_pieces::CardSprite_obj::cardWidth;
             			}
             			HX_END_LOCAL_FUNC1((void))
 
             			HX_BEGIN_LOCAL_FUNC_S0(::hx::LocalFunc,_hx_Closure_1) HXARGC(1)
             			void _hx_run( ::Dynamic v){
-            				HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_53_new)
-HXLINE(  53)				::haxe::Log_obj::trace(HX_("oopsie!",82,11,a0,32),::hx::SourceInfo(HX_("source/client/play/game_pieces/CardSprite.hx",61,f6,40,0b),53,HX_("client.play.game_pieces.CardSprite",e8,e4,1c,07),HX_("new",60,d0,53,00)));
+            				HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_61_new)
+HXLINE(  61)				::haxe::Log_obj::trace(HX_("oopsie!",82,11,a0,32),::hx::SourceInfo(HX_("source/client/play/game_pieces/CardSprite.hx",61,f6,40,0b),61,HX_("client.play.game_pieces.CardSprite",e8,e4,1c,07),HX_("new",60,d0,53,00)));
             			}
             			HX_END_LOCAL_FUNC1((void))
 
-HXLINE(  47)			 ::Dynamic tmp = this->_card->_struct->__Field(HX_("image_uris",2b,46,5e,79),::hx::paccDynamic);
-HXDLIN(  47)			::String tmp1;
-HXDLIN(  47)			if (::hx::IsNotNull( tmp )) {
-HXLINE(  47)				tmp1 = ( (::String)(tmp->__Field(HX_("large",bb,33,bb,6f),::hx::paccDynamic)) );
+HXLINE(  55)			 ::Dynamic tmp = this->_card->_struct->__Field(HX_("image_uris",2b,46,5e,79),::hx::paccDynamic);
+HXDLIN(  55)			::String tmp1;
+HXDLIN(  55)			if (::hx::IsNotNull( tmp )) {
+HXLINE(  55)				tmp1 = ( (::String)(tmp->__Field(HX_("large",bb,33,bb,6f),::hx::paccDynamic)) );
             			}
             			else {
-HXLINE(  47)				tmp1 = null();
+HXLINE(  55)				tmp1 = null();
             			}
-HXDLIN(  47)			::String _hx_tmp;
-HXDLIN(  47)			if (::hx::IsNotNull( tmp1 )) {
-HXLINE(  47)				_hx_tmp = tmp1;
+HXDLIN(  55)			::String _hx_tmp;
+HXDLIN(  55)			if (::hx::IsNotNull( tmp1 )) {
+HXLINE(  55)				_hx_tmp = tmp1;
             			}
             			else {
-HXLINE(  47)				_hx_tmp = ( (::String)( ::Dynamic( ::Dynamic(this->_card->_struct->__Field(HX_("card_faces",47,f6,4d,f8),::hx::paccDynamic))->__GetItem(0)->__Field(HX_("image_uris",2b,46,5e,79),::hx::paccDynamic))->__Field(HX_("large",bb,33,bb,6f),::hx::paccDynamic)) );
+HXLINE(  55)				_hx_tmp = ( (::String)( ::Dynamic( ::Dynamic(this->_card->_struct->__Field(HX_("card_faces",47,f6,4d,f8),::hx::paccDynamic))->__GetItem(0)->__Field(HX_("image_uris",2b,46,5e,79),::hx::paccDynamic))->__Field(HX_("large",bb,33,bb,6f),::hx::paccDynamic)) );
             			}
-HXDLIN(  47)			::openfl::display::BitmapData_obj::loadFromFile(_hx_tmp)->onComplete( ::Dynamic(new _hx_Closure_0(_gthis)))->onError( ::Dynamic(new _hx_Closure_1()));
+HXDLIN(  55)			::openfl::display::BitmapData_obj::loadFromFile(_hx_tmp)->onComplete( ::Dynamic(new _hx_Closure_0(_gthis)))->onError( ::Dynamic(new _hx_Closure_1()));
             		}
-HXLINE(  55)		this->set_antialiasing(true);
+HXLINE(  63)		this->set_antialiasing(true);
             	}
 
 Dynamic CardSprite_obj::__CreateEmpty() { return new CardSprite_obj; }
@@ -116,8 +157,12 @@ Dynamic CardSprite_obj::__Create(::hx::DynamicArray inArgs)
 
 bool CardSprite_obj::_hx_isInstanceOf(int inClassId) {
 	if (inClassId<=(int)0x2c01639b) {
-		if (inClassId<=(int)0x0d40e604) {
-			return inClassId==(int)0x00000001 || inClassId==(int)0x0d40e604;
+		if (inClassId<=(int)0x107498cd) {
+			if (inClassId<=(int)0x0d40e604) {
+				return inClassId==(int)0x00000001 || inClassId==(int)0x0d40e604;
+			} else {
+				return inClassId==(int)0x107498cd;
+			}
 		} else {
 			return inClassId==(int)0x2c01639b;
 		}
@@ -127,69 +172,168 @@ bool CardSprite_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 bool CardSprite_obj::set_showcase(bool v){
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_24_set_showcase)
-HXLINE(  25)		if (v) {
-HXLINE(  26)			this->setGraphicSize((::client::play::game_pieces::CardSprite_obj::cardWidth * ((Float)2.3)),null());
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_32_set_showcase)
+HXLINE(  33)		if (v) {
+HXLINE(  34)			this->setGraphicSize((::client::play::game_pieces::CardSprite_obj::cardWidth * ((Float)2.3)),null());
             		}
             		else {
-HXLINE(  28)			this->setGraphicSize(::client::play::game_pieces::CardSprite_obj::cardWidth,null());
+HXLINE(  36)			this->setGraphicSize(::client::play::game_pieces::CardSprite_obj::cardWidth,null());
             		}
-HXLINE(  29)		return (this->showcase = v);
+HXLINE(  37)		return (this->showcase = v);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CardSprite_obj,set_showcase,return )
 
 int CardSprite_obj::set__gameIndex(int index){
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_34_set__gameIndex)
-HXLINE(  35)		if (!(this->showcase)) {
-HXLINE(  36)			this->set_x((( (Float)(::hx::Mod(index,5)) ) * (::client::play::game_pieces::CardSprite_obj::cardWidth + 1)));
-HXLINE(  37)			this->set_y(((( (Float)(::Math_obj::floor((( (Float)(index) ) / ( (Float)(5) )))) ) * ::client::play::game_pieces::CardSprite_obj::cardHeight) + 15));
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_42_set__gameIndex)
+HXLINE(  43)		if (!(this->showcase)) {
+HXLINE(  44)			this->set_x((25 + (( (Float)(::hx::Mod(index,5)) ) * (::client::play::game_pieces::CardSprite_obj::cardWidth + 1))));
+HXLINE(  45)			this->set_y(((25 + (( (Float)(::Math_obj::floor((( (Float)(index) ) / ( (Float)(5) )))) ) * ::client::play::game_pieces::CardSprite_obj::cardHeight)) + 15));
             		}
-HXLINE(  39)		return (this->_gameIndex = index);
+HXLINE(  47)		return (this->_gameIndex = index);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CardSprite_obj,set__gameIndex,return )
 
 void CardSprite_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_58_update)
-HXLINE(  59)		this->super::update(elapsed);
-HXLINE(  60)		Float a = this->prevWidth;
-HXDLIN(  60)		this->prevWidth = (a + ((elapsed * ((Float)11.1)) * (( (Float)(this->_cardWidth) ) - a)));
-HXLINE(  61)		this->setGraphicSize(this->prevWidth,null());
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_67_update)
+HXLINE(  68)		this->super::update(elapsed);
+HXLINE(  69)		Float a = this->prevWidth;
+HXDLIN(  69)		this->prevWidth = (a + ((elapsed * ((Float)11.1)) * (( (Float)(this->_cardWidth) ) - a)));
+HXLINE(  70)		this->setGraphicSize(this->prevWidth,null());
+HXLINE(  71)		this->matrixExposed = this->hovering;
+HXLINE(  73)		if (this->_trackingMouse) {
+HXLINE(  74)			 ::flixel::input::mouse::FlxMouse _this = ::flixel::FlxG_obj::mouse;
+HXDLIN(  74)			this->set_x((this->x + (_this->x - _this->_prevX)));
+HXLINE(  75)			 ::flixel::input::mouse::FlxMouse _this1 = ::flixel::FlxG_obj::mouse;
+HXDLIN(  75)			this->set_y((this->y + (_this1->y - _this1->_prevY)));
+HXLINE(  77)			 ::client::play::game_pieces::CardSprite _hx_tmp = ::hx::ObjectPtr<OBJ_>(this);
+HXDLIN(  77)			 ::flixel::input::mouse::FlxMouse _this2 = ::flixel::FlxG_obj::mouse;
+HXDLIN(  77)			 ::flixel::input::mouse::FlxMouse _this3 = ::flixel::FlxG_obj::mouse;
+HXDLIN(  77)			_hx_tmp->_angularDrag = (_hx_tmp->_angularDrag + (( (Float)((_this2->x - _this2->_prevX)) ) * ::Math_obj::max(( (Float)((_this3->y - _this3->_prevY)) ),( (Float)(1) ))));
+HXLINE(  78)			this->_angularDrag = ::Math_obj::min(::Math_obj::max(this->_angularDrag,( (Float)(-120) )),( (Float)(120) ));
+            		}
+HXLINE(  81)		Float a1 = this->angle;
+HXDLIN(  81)		this->set_angle((a1 + ((elapsed * ((Float)9.1)) * (this->_angularDrag - a1))));
+HXLINE(  82)		 ::client::play::game_pieces::CardSprite _hx_tmp1 = ::hx::ObjectPtr<OBJ_>(this);
+HXDLIN(  82)		Float _hx_tmp2;
+HXDLIN(  82)		if (this->_trackingMouse) {
+HXLINE(  82)			_hx_tmp2 = ((Float).85);
+            		}
+            		else {
+HXLINE(  82)			_hx_tmp2 = ((Float)0.05);
+            		}
+HXDLIN(  82)		_hx_tmp1->_angularDrag = (_hx_tmp1->_angularDrag * _hx_tmp2);
             	}
 
 
 void CardSprite_obj::offHover(){
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_65_offHover)
-HXLINE(  66)		this->_cardWidth = ::client::play::game_pieces::CardSprite_obj::cardWidth;
-HXLINE(  67)		this->hovering = false;
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_86_offHover)
+HXLINE(  87)		this->_cardWidth = ::client::play::game_pieces::CardSprite_obj::cardWidth;
+HXLINE(  88)		this->hovering = false;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CardSprite_obj,offHover,(void))
 
 void CardSprite_obj::onHover(){
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_70_onHover)
-HXLINE(  71)		this->_cardWidth = (::client::play::game_pieces::CardSprite_obj::cardWidth * ((Float)1.15));
-HXLINE(  72)		this->hovering = true;
+            	HX_GC_STACKFRAME(&_hx_pos_77460ae1f01b4b32_94_onHover)
+HXDLIN(  94)		if (!(this->_trackingMouse)) {
+HXLINE(  95)			 ::flixel::math::FlxBasePoint a = ::flixel::FlxG_obj::mouse->getWorldPosition(null(),null());
+HXDLIN(  95)			Float x = this->x;
+HXDLIN(  95)			Float y = this->y;
+HXDLIN(  95)			 ::flixel::math::FlxBasePoint point = ::flixel::math::FlxBasePoint_obj::pool->get().StaticCast<  ::flixel::math::FlxBasePoint >()->set(x,y);
+HXDLIN(  95)			point->_inPool = false;
+HXDLIN(  95)			 ::flixel::math::FlxBasePoint b = point;
+HXDLIN(  95)			Float x1 = (a->x - b->x);
+HXDLIN(  95)			Float y1 = (a->y - b->y);
+HXDLIN(  95)			 ::flixel::math::FlxBasePoint point1 = ::flixel::math::FlxBasePoint_obj::pool->get().StaticCast<  ::flixel::math::FlxBasePoint >()->set(x1,y1);
+HXDLIN(  95)			point1->_inPool = false;
+HXDLIN(  95)			 ::flixel::math::FlxBasePoint result = point1;
+HXDLIN(  95)			if (a->_weak) {
+HXLINE(  95)				a->put();
+            			}
+HXDLIN(  95)			if (b->_weak) {
+HXLINE(  95)				b->put();
+            			}
+HXDLIN(  95)			 ::flixel::math::FlxBasePoint mousePointOnCard = result;
+HXLINE(  96)			Float mousePointOnCard1 = mousePointOnCard->x;
+HXDLIN(  96)			Float mouseVector = ((mousePointOnCard1 / this->get_width()) - ((Float)0.5));
+HXDLIN(  96)			Float mousePointOnCard2 = mousePointOnCard->y;
+HXDLIN(  96)			 ::lime::math::Vector2 mouseVector1 =  ::lime::math::Vector2_obj::__alloc( HX_CTX ,mouseVector,((mousePointOnCard2 / this->get_height()) - ((Float)0.5)));
+HXLINE(  98)			this->transformMatrix->c = (-((mouseVector1->x * (mouseVector1->y * ( (Float)(2) )))) * ::client::play::game_pieces::CardSprite_obj::MOUSE_INFLUENCE);
+HXLINE( 100)			this->transformMatrix->d = (( (Float)(1) ) - (::Math_obj::abs(mouseVector1->y) * ::client::play::game_pieces::CardSprite_obj::MOUSE_INFLUENCE));
+HXLINE( 102)			this->_cardWidth = (::client::play::game_pieces::CardSprite_obj::cardWidth * ((Float)1.15));
+HXLINE( 103)			this->hovering = true;
+            		}
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CardSprite_obj,onHover,(void))
 
+void CardSprite_obj::startTracking(){
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_107_startTracking)
+HXLINE( 108)		this->_trackingMouse = true;
+HXLINE( 109)		this->hovering = false;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(CardSprite_obj,startTracking,(void))
+
+void CardSprite_obj::stopTracking(){
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_113_stopTracking)
+HXLINE( 114)		this->set__gameIndex(this->_gameIndex);
+HXLINE( 115)		this->_trackingMouse = false;
+HXLINE( 116)		this->offHover();
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(CardSprite_obj,stopTracking,(void))
+
+ ::flixel::math::FlxBasePoint CardSprite_obj::getRelativeMousePosition(){
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_128_getRelativeMousePosition)
+HXDLIN( 128)		 ::flixel::math::FlxBasePoint a = ::flixel::FlxG_obj::mouse->getWorldPosition(null(),null());
+HXDLIN( 128)		Float x = this->x;
+HXDLIN( 128)		Float y = this->y;
+HXDLIN( 128)		 ::flixel::math::FlxBasePoint point = ::flixel::math::FlxBasePoint_obj::pool->get().StaticCast<  ::flixel::math::FlxBasePoint >()->set(x,y);
+HXDLIN( 128)		point->_inPool = false;
+HXDLIN( 128)		 ::flixel::math::FlxBasePoint b = point;
+HXDLIN( 128)		Float x1 = (a->x - b->x);
+HXDLIN( 128)		Float y1 = (a->y - b->y);
+HXDLIN( 128)		 ::flixel::math::FlxBasePoint point1 = ::flixel::math::FlxBasePoint_obj::pool->get().StaticCast<  ::flixel::math::FlxBasePoint >()->set(x1,y1);
+HXDLIN( 128)		point1->_inPool = false;
+HXDLIN( 128)		 ::flixel::math::FlxBasePoint result = point1;
+HXDLIN( 128)		if (a->_weak) {
+HXDLIN( 128)			a->put();
+            		}
+HXDLIN( 128)		if (b->_weak) {
+HXDLIN( 128)			b->put();
+            		}
+HXDLIN( 128)		return result;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(CardSprite_obj,getRelativeMousePosition,return )
+
+int CardSprite_obj::MARGIN_X;
+
+int CardSprite_obj::MARGIN_Y;
+
 Float CardSprite_obj::cardWidth;
 
 Float CardSprite_obj::cardHeight;
 
+Float CardSprite_obj::MOUSE_INFLUENCE;
+
  ::client::play::game_pieces::CardSprite CardSprite_obj::generateShowcaseCard( ::client::play::game_pieces::CardSprite cardSpr){
-            	HX_GC_STACKFRAME(&_hx_pos_77460ae1f01b4b32_75_generateShowcaseCard)
-HXLINE(  76)		 ::client::play::game_pieces::CardSprite cardSpr1 =  ::client::play::game_pieces::CardSprite_obj::__alloc( HX_CTX ,cardSpr->_card,null());
-HXLINE(  77)		cardSpr1->loadGraphicFromSprite(cardSpr1);
-HXLINE(  78)		cardSpr1->showcase = true;
-HXLINE(  79)		cardSpr1->set_x((( (Float)(::flixel::FlxG_obj::width) ) - ::client::play::game_pieces::CardSprite_obj::cardWidth));
-HXLINE(  80)		return cardSpr1;
+            	HX_GC_STACKFRAME(&_hx_pos_77460ae1f01b4b32_119_generateShowcaseCard)
+HXLINE( 120)		 ::client::play::game_pieces::CardSprite cardSpr1 =  ::client::play::game_pieces::CardSprite_obj::__alloc( HX_CTX ,cardSpr->_card,null());
+HXLINE( 121)		cardSpr1->loadGraphicFromSprite(cardSpr1);
+HXLINE( 122)		cardSpr1->showcase = true;
+HXLINE( 123)		cardSpr1->set_x((( (Float)(::flixel::FlxG_obj::width) ) - ::client::play::game_pieces::CardSprite_obj::cardWidth));
+HXLINE( 124)		return cardSpr1;
             	}
 
 
@@ -221,8 +365,10 @@ void CardSprite_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(_cardWidth,"_cardWidth");
 	HX_MARK_MEMBER_NAME(_gameIndex,"_gameIndex");
 	HX_MARK_MEMBER_NAME(showcase,"showcase");
+	HX_MARK_MEMBER_NAME(_trackingMouse,"_trackingMouse");
 	HX_MARK_MEMBER_NAME(hovering,"hovering");
-	 ::flixel::FlxSprite_obj::__Mark(HX_MARK_ARG);
+	HX_MARK_MEMBER_NAME(_angularDrag,"_angularDrag");
+	 ::flixel::addons::effects::FlxSkewedSprite_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -233,8 +379,10 @@ void CardSprite_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(_cardWidth,"_cardWidth");
 	HX_VISIT_MEMBER_NAME(_gameIndex,"_gameIndex");
 	HX_VISIT_MEMBER_NAME(showcase,"showcase");
+	HX_VISIT_MEMBER_NAME(_trackingMouse,"_trackingMouse");
 	HX_VISIT_MEMBER_NAME(hovering,"hovering");
-	 ::flixel::FlxSprite_obj::__Visit(HX_VISIT_ARG);
+	HX_VISIT_MEMBER_NAME(_angularDrag,"_angularDrag");
+	 ::flixel::addons::effects::FlxSkewedSprite_obj::__Visit(HX_VISIT_ARG);
 }
 
 ::hx::Val CardSprite_obj::__Field(const ::String &inName,::hx::PropertyAccess inCallProp)
@@ -263,9 +411,18 @@ void CardSprite_obj::__Visit(HX_VISIT_PARAMS)
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"set_showcase") ) { return ::hx::Val( set_showcase_dyn() ); }
+		if (HX_FIELD_EQ(inName,"_angularDrag") ) { return ::hx::Val( _angularDrag ); }
+		if (HX_FIELD_EQ(inName,"stopTracking") ) { return ::hx::Val( stopTracking_dyn() ); }
+		break;
+	case 13:
+		if (HX_FIELD_EQ(inName,"startTracking") ) { return ::hx::Val( startTracking_dyn() ); }
 		break;
 	case 14:
+		if (HX_FIELD_EQ(inName,"_trackingMouse") ) { return ::hx::Val( _trackingMouse ); }
 		if (HX_FIELD_EQ(inName,"set__gameIndex") ) { return ::hx::Val( set__gameIndex_dyn() ); }
+		break;
+	case 24:
+		if (HX_FIELD_EQ(inName,"getRelativeMousePosition") ) { return ::hx::Val( getRelativeMousePosition_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -278,6 +435,9 @@ bool CardSprite_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::hx
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"cardHeight") ) { outValue = ( cardHeight ); return true; }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"MOUSE_INFLUENCE") ) { outValue = ( MOUSE_INFLUENCE ); return true; }
 		break;
 	case 20:
 		if (HX_FIELD_EQ(inName,"generateShowcaseCard") ) { outValue = generateShowcaseCard_dyn(); return true; }
@@ -301,6 +461,12 @@ bool CardSprite_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::hx
 	case 10:
 		if (HX_FIELD_EQ(inName,"_cardWidth") ) { _cardWidth=inValue.Cast<  ::Dynamic >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_gameIndex") ) { if (inCallProp == ::hx::paccAlways) return ::hx::Val( set__gameIndex(inValue.Cast< int >()) );_gameIndex=inValue.Cast< int >(); return inValue; }
+		break;
+	case 12:
+		if (HX_FIELD_EQ(inName,"_angularDrag") ) { _angularDrag=inValue.Cast< Float >(); return inValue; }
+		break;
+	case 14:
+		if (HX_FIELD_EQ(inName,"_trackingMouse") ) { _trackingMouse=inValue.Cast< bool >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -313,6 +479,9 @@ bool CardSprite_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,::hx::P
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"cardHeight") ) { cardHeight=ioValue.Cast< Float >(); return true; }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"MOUSE_INFLUENCE") ) { MOUSE_INFLUENCE=ioValue.Cast< Float >(); return true; }
 	}
 	return false;
 }
@@ -324,7 +493,9 @@ void CardSprite_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_("_cardWidth",d7,71,ea,78));
 	outFields->push(HX_("_gameIndex",81,05,d2,4e));
 	outFields->push(HX_("showcase",2d,b6,67,be));
+	outFields->push(HX_("_trackingMouse",af,07,02,9f));
 	outFields->push(HX_("hovering",a6,64,8c,e5));
+	outFields->push(HX_("_angularDrag",f7,cd,22,02));
 	super::__GetFields(outFields);
 };
 
@@ -335,12 +506,17 @@ static ::hx::StorageInfo CardSprite_obj_sMemberStorageInfo[] = {
 	{::hx::fsObject /*  ::Dynamic */ ,(int)offsetof(CardSprite_obj,_cardWidth),HX_("_cardWidth",d7,71,ea,78)},
 	{::hx::fsInt,(int)offsetof(CardSprite_obj,_gameIndex),HX_("_gameIndex",81,05,d2,4e)},
 	{::hx::fsBool,(int)offsetof(CardSprite_obj,showcase),HX_("showcase",2d,b6,67,be)},
+	{::hx::fsBool,(int)offsetof(CardSprite_obj,_trackingMouse),HX_("_trackingMouse",af,07,02,9f)},
 	{::hx::fsBool,(int)offsetof(CardSprite_obj,hovering),HX_("hovering",a6,64,8c,e5)},
+	{::hx::fsFloat,(int)offsetof(CardSprite_obj,_angularDrag),HX_("_angularDrag",f7,cd,22,02)},
 	{ ::hx::fsUnknown, 0, null()}
 };
 static ::hx::StaticInfo CardSprite_obj_sStaticStorageInfo[] = {
+	{::hx::fsInt,(void *) &CardSprite_obj::MARGIN_X,HX_("MARGIN_X",c7,56,52,9e)},
+	{::hx::fsInt,(void *) &CardSprite_obj::MARGIN_Y,HX_("MARGIN_Y",c8,56,52,9e)},
 	{::hx::fsFloat,(void *) &CardSprite_obj::cardWidth,HX_("cardWidth",16,f6,47,1d)},
 	{::hx::fsFloat,(void *) &CardSprite_obj::cardHeight,HX_("cardHeight",d7,d5,fe,37)},
+	{::hx::fsFloat,(void *) &CardSprite_obj::MOUSE_INFLUENCE,HX_("MOUSE_INFLUENCE",db,6f,d5,e9)},
 	{ ::hx::fsUnknown, 0, null()}
 };
 #endif
@@ -351,23 +527,34 @@ static ::String CardSprite_obj_sMemberFields[] = {
 	HX_("_cardWidth",d7,71,ea,78),
 	HX_("_gameIndex",81,05,d2,4e),
 	HX_("showcase",2d,b6,67,be),
+	HX_("_trackingMouse",af,07,02,9f),
 	HX_("set_showcase",aa,8d,7a,88),
 	HX_("hovering",a6,64,8c,e5),
 	HX_("set__gameIndex",3e,76,e7,e4),
+	HX_("_angularDrag",f7,cd,22,02),
 	HX_("update",09,86,05,87),
 	HX_("offHover",cd,ef,65,e5),
 	HX_("onHover",1d,84,a2,c1),
+	HX_("startTracking",b9,49,79,84),
+	HX_("stopTracking",59,65,1e,f1),
+	HX_("getRelativeMousePosition",0c,67,84,61),
 	::String(null()) };
 
 static void CardSprite_obj_sMarkStatics(HX_MARK_PARAMS) {
+	HX_MARK_MEMBER_NAME(CardSprite_obj::MARGIN_X,"MARGIN_X");
+	HX_MARK_MEMBER_NAME(CardSprite_obj::MARGIN_Y,"MARGIN_Y");
 	HX_MARK_MEMBER_NAME(CardSprite_obj::cardWidth,"cardWidth");
 	HX_MARK_MEMBER_NAME(CardSprite_obj::cardHeight,"cardHeight");
+	HX_MARK_MEMBER_NAME(CardSprite_obj::MOUSE_INFLUENCE,"MOUSE_INFLUENCE");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void CardSprite_obj_sVisitStatics(HX_VISIT_PARAMS) {
+	HX_VISIT_MEMBER_NAME(CardSprite_obj::MARGIN_X,"MARGIN_X");
+	HX_VISIT_MEMBER_NAME(CardSprite_obj::MARGIN_Y,"MARGIN_Y");
 	HX_VISIT_MEMBER_NAME(CardSprite_obj::cardWidth,"cardWidth");
 	HX_VISIT_MEMBER_NAME(CardSprite_obj::cardHeight,"cardHeight");
+	HX_VISIT_MEMBER_NAME(CardSprite_obj::MOUSE_INFLUENCE,"MOUSE_INFLUENCE");
 };
 
 #endif
@@ -375,8 +562,11 @@ static void CardSprite_obj_sVisitStatics(HX_VISIT_PARAMS) {
 ::hx::Class CardSprite_obj::__mClass;
 
 static ::String CardSprite_obj_sStaticFields[] = {
+	HX_("MARGIN_X",c7,56,52,9e),
+	HX_("MARGIN_Y",c8,56,52,9e),
 	HX_("cardWidth",16,f6,47,1d),
 	HX_("cardHeight",d7,d5,fe,37),
+	HX_("MOUSE_INFLUENCE",db,6f,d5,e9),
 	HX_("generateShowcaseCard",72,41,37,ed),
 	::String(null())
 };
@@ -411,12 +601,24 @@ void CardSprite_obj::__register()
 void CardSprite_obj::__boot()
 {
 {
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_15_boot)
-HXDLIN(  15)		cardWidth = ((Float)150);
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_18_boot)
+HXDLIN(  18)		MARGIN_X = 25;
             	}
 {
-            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_16_boot)
-HXDLIN(  16)		cardHeight = ((Float)210);
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_19_boot)
+HXDLIN(  19)		MARGIN_Y = 25;
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_21_boot)
+HXDLIN(  21)		cardWidth = ((Float)150);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_22_boot)
+HXDLIN(  22)		cardHeight = ((Float)210);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_77460ae1f01b4b32_91_boot)
+HXDLIN(  91)		MOUSE_INFLUENCE = ((Float)0.05);
             	}
 }
 

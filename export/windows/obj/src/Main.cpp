@@ -64,7 +64,7 @@ HX_DEFINE_STACK_FRAME(_hx_pos_e47a9afac0942eb9_9_new,"Main","new",0x6616a5cb,"Ma
 void Main_obj::__construct(){
             	HX_GC_STACKFRAME(&_hx_pos_e47a9afac0942eb9_9_new)
 HXLINE(  10)		super::__construct();
-HXLINE(  11)		this->addChild( ::flixel::FlxGame_obj::__alloc( HX_CTX ,0,0,::flixel::util::typeLimit::_NextState::InitialState_Impl__obj::fromType(::hx::ClassOf< ::client::play::CardState >()),60,60,true,null()));
+HXLINE(  11)		this->addChild( ::flixel::FlxGame_obj::__alloc( HX_CTX ,0,0,::flixel::util::typeLimit::_NextState::InitialState_Impl__obj::fromType(::hx::ClassOf< ::client::play::CardState >()),240,240,true,null()));
 HXLINE(  12)		::flixel::FlxG_obj::mouse->set_useSystemCursor(true);
             	}
 

@@ -1198,9 +1198,6 @@
 #ifndef INCLUDED_flixel_math_FlxRect
 #include <flixel/math/FlxRect.h>
 #endif
-#ifndef INCLUDED_client_play_CardState
-#include <client/play/CardState.h>
-#endif
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
@@ -1218,6 +1215,18 @@
 #endif
 #ifndef INCLUDED_openfl_text_Font
 #include <openfl/text/Font.h>
+#endif
+#ifndef INCLUDED___ASSET__flixel_images_transitions_square_png
+#include <__ASSET__flixel_images_transitions_square_png.h>
+#endif
+#ifndef INCLUDED___ASSET__flixel_images_transitions_diamond_png
+#include <__ASSET__flixel_images_transitions_diamond_png.h>
+#endif
+#ifndef INCLUDED___ASSET__flixel_images_transitions_diagonal_gradient_png
+#include <__ASSET__flixel_images_transitions_diagonal_gradient_png.h>
+#endif
+#ifndef INCLUDED___ASSET__flixel_images_transitions_circle_png
+#include <__ASSET__flixel_images_transitions_circle_png.h>
 #endif
 #ifndef INCLUDED___ASSET__flixel_images_logo_default_png
 #include <__ASSET__flixel_images_logo_default_png.h>
@@ -3091,6 +3100,9 @@
 #ifndef INCLUDED_cpp_Lib
 #include <cpp/Lib.h>
 #endif
+#ifndef INCLUDED_flixel_addons_effects_FlxSkewedSprite
+#include <flixel/addons/effects/FlxSkewedSprite.h>
+#endif
 #ifndef INCLUDED_flixel_util_FlxPool
 #include <flixel/util/FlxPool.h>
 #endif
@@ -3099,6 +3111,9 @@
 #endif
 #ifndef INCLUDED_flixel_util_IFlxPooled
 #include <flixel/util/IFlxPooled.h>
+#endif
+#ifndef INCLUDED_client_play_CardState
+#include <client/play/CardState.h>
 #endif
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
@@ -3617,13 +3632,16 @@ __files__boot();
 ::flixel::FlxSprite_obj::__register();
 ::flixel::FlxObject_obj::__register();
 ::flixel::math::FlxRect_obj::__register();
-::client::play::CardState_obj::__register();
 ::flixel::FlxBasic_obj::__register();
 ::backend::http::APIFunctions_obj::__register();
 ::backend::encoding::ParentEncoding_obj::__register();
 ::Xml_obj::__register();
 ::haxe::SysTools_obj::__register();
 ::openfl::text::Font_obj::__register();
+::__ASSET__flixel_images_transitions_square_png_obj::__register();
+::__ASSET__flixel_images_transitions_diamond_png_obj::__register();
+::__ASSET__flixel_images_transitions_diagonal_gradient_png_obj::__register();
+::__ASSET__flixel_images_transitions_circle_png_obj::__register();
 ::__ASSET__flixel_images_logo_default_png_obj::__register();
 ::__ASSET__flixel_images_ui_button_png_obj::__register();
 ::__ASSET__flixel_fonts_monsterrat_ttf_obj::__register();
@@ -4248,9 +4266,11 @@ __files__boot();
 ::flixel::_hx_system::frontEnds::BitmapFrontEnd_obj::__register();
 ::flixel::IFlxBasic_obj::__register();
 ::cpp::Lib_obj::__register();
+::flixel::addons::effects::FlxSkewedSprite_obj::__register();
 ::flixel::util::FlxPool_obj::__register();
 ::flixel::util::IFlxPool_obj::__register();
 ::flixel::util::IFlxPooled_obj::__register();
+::client::play::CardState_obj::__register();
 ::flixel::FlxState_obj::__register();
 ::flixel::group::FlxTypedGroup_obj::__register();
 ::flixel::util::IFlxDestroyable_obj::__register();
@@ -4361,13 +4381,16 @@ __files__boot();
 ::__ASSET__flixel_fonts_monsterrat_ttf_obj::__boot();
 ::__ASSET__flixel_images_ui_button_png_obj::__boot();
 ::__ASSET__flixel_images_logo_default_png_obj::__boot();
+::__ASSET__flixel_images_transitions_circle_png_obj::__boot();
+::__ASSET__flixel_images_transitions_diagonal_gradient_png_obj::__boot();
+::__ASSET__flixel_images_transitions_diamond_png_obj::__boot();
+::__ASSET__flixel_images_transitions_square_png_obj::__boot();
 ::openfl::text::Font_obj::__boot();
 ::haxe::SysTools_obj::__boot();
 ::Xml_obj::__boot();
 ::backend::encoding::ParentEncoding_obj::__boot();
 ::backend::http::APIFunctions_obj::__boot();
 ::flixel::FlxBasic_obj::__boot();
-::client::play::CardState_obj::__boot();
 ::flixel::math::FlxRect_obj::__boot();
 ::flixel::FlxObject_obj::__boot();
 ::flixel::FlxSprite_obj::__boot();

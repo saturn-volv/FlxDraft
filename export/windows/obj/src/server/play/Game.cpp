@@ -5,22 +5,23 @@
 #include <server/play/Game.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_2ea19bab9e0f6e38_13_new,"server.play.Game","new",0xcd01f8d3,"server.play.Game.new","server/play/Game.hx",13,0x76af319d)
+HX_DEFINE_STACK_FRAME(_hx_pos_2ea19bab9e0f6e38_18_new,"server.play.Game","new",0xcd01f8d3,"server.play.Game.new","server/play/Game.hx",18,0x76af319d)
 namespace server{
 namespace play{
 
-void Game_obj::__construct(::String setCode){
-            	HX_STACKFRAME(&_hx_pos_2ea19bab9e0f6e38_13_new)
-HXLINE(  14)		::server::play::Game_obj::instance = ::hx::ObjectPtr<OBJ_>(this);
-HXLINE(  16)		::String tmp = setCode;
-HXDLIN(  16)		::String _hx_tmp;
-HXDLIN(  16)		if (::hx::IsNotNull( tmp )) {
-HXLINE(  16)			_hx_tmp = tmp;
+void Game_obj::__construct(::String setCode, ::Dynamic spreads){
+            	HX_STACKFRAME(&_hx_pos_2ea19bab9e0f6e38_18_new)
+HXLINE(  19)		::server::play::Game_obj::instance = ::hx::ObjectPtr<OBJ_>(this);
+HXLINE(  20)		this->spreads = spreads;
+HXLINE(  22)		::String tmp = setCode;
+HXDLIN(  22)		::String _hx_tmp;
+HXDLIN(  22)		if (::hx::IsNotNull( tmp )) {
+HXLINE(  22)			_hx_tmp = tmp;
             		}
             		else {
-HXLINE(  16)			_hx_tmp = HX_("MH3",78,ac,3a,00);
+HXLINE(  22)			_hx_tmp = HX_("MH3",78,ac,3a,00);
             		}
-HXLINE(  15)		this->gameSettings =  ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE(  21)		this->gameSettings =  ::Dynamic(::hx::Anon_obj::Create(1)
             			->setFixed(0,HX_("set",a2,9b,57,00),_hx_tmp));
             	}
 
@@ -31,7 +32,7 @@ void *Game_obj::_hx_vtable = 0;
 Dynamic Game_obj::__Create(::hx::DynamicArray inArgs)
 {
 	::hx::ObjectPtr< Game_obj > _hx_result = new Game_obj();
-	_hx_result->__construct(inArgs[0]);
+	_hx_result->__construct(inArgs[0],inArgs[1]);
 	return _hx_result;
 }
 
@@ -50,17 +51,22 @@ void Game_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(Game);
 	HX_MARK_MEMBER_NAME(gameSettings,"gameSettings");
+	HX_MARK_MEMBER_NAME(spreads,"spreads");
 	HX_MARK_END_CLASS();
 }
 
 void Game_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(gameSettings,"gameSettings");
+	HX_VISIT_MEMBER_NAME(spreads,"spreads");
 }
 
 ::hx::Val Game_obj::__Field(const ::String &inName,::hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 7:
+		if (HX_FIELD_EQ(inName,"spreads") ) { return ::hx::Val( spreads ); }
+		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"gameSettings") ) { return ::hx::Val( gameSettings ); }
 	}
@@ -79,6 +85,9 @@ bool Game_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::hx::Prop
 ::hx::Val Game_obj::__SetField(const ::String &inName,const ::hx::Val &inValue,::hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 7:
+		if (HX_FIELD_EQ(inName,"spreads") ) { spreads=inValue.Cast<  ::Dynamic >(); return inValue; }
+		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"gameSettings") ) { gameSettings=inValue.Cast<  ::Dynamic >(); return inValue; }
 	}
@@ -97,12 +106,14 @@ bool Game_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,::hx::Propert
 void Game_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_("gameSettings",f5,6e,2e,c6));
+	outFields->push(HX_("spreads",a0,62,d7,5c));
 	super::__GetFields(outFields);
 };
 
 #ifdef HXCPP_SCRIPTABLE
 static ::hx::StorageInfo Game_obj_sMemberStorageInfo[] = {
 	{::hx::fsObject /*  ::Dynamic */ ,(int)offsetof(Game_obj,gameSettings),HX_("gameSettings",f5,6e,2e,c6)},
+	{::hx::fsObject /*  ::Dynamic */ ,(int)offsetof(Game_obj,spreads),HX_("spreads",a0,62,d7,5c)},
 	{ ::hx::fsUnknown, 0, null()}
 };
 static ::hx::StaticInfo Game_obj_sStaticStorageInfo[] = {
@@ -113,6 +124,7 @@ static ::hx::StaticInfo Game_obj_sStaticStorageInfo[] = {
 
 static ::String Game_obj_sMemberFields[] = {
 	HX_("gameSettings",f5,6e,2e,c6),
+	HX_("spreads",a0,62,d7,5c),
 	::String(null()) };
 
 static void Game_obj_sMarkStatics(HX_MARK_PARAMS) {

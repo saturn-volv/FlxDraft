@@ -6,6 +6,8 @@ import flixel.FlxState;
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxSort;
+import lime.ui.MouseCursor;
+import openfl.ui.Mouse;
 import scryfall.Card;
 import server.play.Game;
 import server.user.User;
@@ -14,19 +16,27 @@ import server.user.player.Player;
 using Lambda;
 
 class CardState extends FlxState {
-	private static inline final MARGIN_X:Int = 25;
-	private static inline final MARGIN_Y:Int = 25;
 
 	private var cards:FlxTypedSpriteGroup<CardSprite>;
+
+	private var holdingCard:Bool = false;
+
+	public var cardOnCursor:Null<CardSprite> = null;
 
 	private var selectedCard:CardSprite;
 
 	override function create() {
 		super.create();
 		this.bgColor = 0xFF3D212D;
-		this.cards = new FlxTypedSpriteGroup<CardSprite>(MARGIN_X, MARGIN_Y);
+		this.cards = new FlxTypedSpriteGroup<CardSprite>();
 		add(cards);
 
+		/*new Game('rvr', {
+			common: 10,
+			uncommon: 3,
+			rare: 2,
+			lands: 0
+		});*/
 		new Game('mh3');
 		var players:Array<Player> = [];
 		for (name in ['debug_user']) {
@@ -58,24 +68,46 @@ class CardState extends FlxState {
 		}
 		#end
 
-		var hoverFilter = cards.members.filter(f -> f.hovering);
-		for (card in cards.members) {
-			if (FlxG.mouse.overlaps(card) && (hoverFilter.length <= 0 || hoverFilter.contains(card))) {
-				card.onHover();
-			} else
-				card.offHover();
-		}
 		cards.sort((i, a, b) -> {
-			FlxSort.byValues(i, a.hovering ? 1 : 0, b.hovering ? 1 : 0);
+			@:privateAccess
+			if (a._trackingMouse)
+				return 1;
+			return a.hovering || !b.hovering ? 1 : -1;
 		});
 
-		if (hoverFilter.length > 0) {
-			selectedCard.loadGraphicFromSprite(hoverFilter[0]);
-			selectedCard.setGraphicSize(CardSprite.cardWidth * 2.2);
-			selectedCard.updateHitbox();
-			selectedCard.x = FlxG.width - selectedCard.width;
-			selectedCard.visible = true;
-		} else
-			selectedCard.visible = false;
+		this.selectedCard.visible = !this.holdingCard;
+		if (!this.holdingCard) {
+			var hoverFilter = cards.members.filter(f -> f.hovering);
+			for (card in cards.members) {
+				if (FlxG.mouse.overlaps(card) && (hoverFilter.length <= 0 || hoverFilter.contains(card))) {
+					card.onHover();
+				} else
+					card.offHover();
+			}
+
+			if (hoverFilter.length > 0) {
+				selectedCard.loadGraphicFromSprite(hoverFilter[0]);
+				selectedCard.setGraphicSize(CardSprite.cardWidth * 2.2);
+				selectedCard.updateHitbox();
+				selectedCard.x = FlxG.width - selectedCard.width;
+				selectedCard.visible = true;
+				Mouse.cursor = MouseCursor.MOVE;
+
+				if (FlxG.mouse.justPressed) {
+					this.cardOnCursor = hoverFilter[0];
+
+					cardOnCursor.startTracking();
+					holdingCard = true;
+				}
+			} else {
+				Mouse.cursor = MouseCursor.ARROW;
+				selectedCard.visible = false;
+			}
+		} else {
+			if (FlxG.mouse.justReleased) {
+				cardOnCursor.stopTracking();
+				holdingCard = false;
+			}
+		}
 	}
 }
