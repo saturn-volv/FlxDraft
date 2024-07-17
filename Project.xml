@@ -30,14 +30,16 @@
 	<!-- _____________________________ Path Settings ____________________________ -->
 
 	<set name="BUILD_DIR" value="export" />
-	<source path="source" />
+	<source path="src" />
 	<assets path="assets" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />
 	<haxelib name="hxScry" version="dev"/>
-
+	
+	<haxelib name="haxeui-core" />
+	<haxelib name="haxeui-flixel" />
 	<!--In case you want to use the addons package-->
 	<!--<haxelib name="flixel-addons" />-->
 
