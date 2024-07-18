@@ -74,6 +74,8 @@ class CardSprite extends FlxBasic {
 		return mouseOverlaps();
 	}
 
+	public var isTapped:Bool = false;
+
 	private var scale:{x:Float, y:Float} = {x: 1, y: 1};
 
 	public var width:Float = DEFAULT_CARD_WIDTH;
@@ -101,6 +103,8 @@ class CardSprite extends FlxBasic {
 		return this.flipped = this.showingBack = v;
 	}
 
+	public var isEmpty:Bool = true;
+
 	public var x(get, set):Float;
 
 	function get_x() {
@@ -121,9 +125,14 @@ class CardSprite extends FlxBasic {
 		return this._faces.y = y;
 	}
 
-	override public function new(x:Float = 0, y:Float = 0) {
+	public var z:Float;
+
+	override public function new(x:Float = 0, y:Float = 0, z:Float = 0) {
 		super();
 		this._faces = new FlxTypedSpriteGroup<CardFace>(x, y);
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	public var doubleFaced:Bool;
@@ -132,6 +141,7 @@ class CardSprite extends FlxBasic {
 		@:privateAccess
 		var cardObj = card._struct;
 		doubleFaced = cardObj.card_faces != null;
+		isEmpty = false;
 
 		this.flipped = true;
 		var backFace = new CardFace();
@@ -161,9 +171,17 @@ class CardSprite extends FlxBasic {
 
 	var showingBack:Bool = false;
 
+	public var angle:Float = 0;
+	public var holding:Bool = false;
+
 	override function update(elapsed:Float) {
 		super.update(elapsed);
 		this._faces?.update(elapsed);
+
+		if (!this.holding)
+			this.angle = this.isTapped ? 90 : 0;
+		this._faces.angle = FlxMath.lerp(this._faces.angle, this.angle, elapsed * 17);
+		this.z = FlxMath.lerp(this.z, this.mouseOverlaps() ? 0.15 : 0, elapsed * 9.11);
 
 		if (this._flipping) {
 			this.scale.x = FlxMath.lerp(this.scale.x, (this.flipped ? !showingBack : showingBack) ? 1 : 0, elapsed * 17);
@@ -180,11 +198,13 @@ class CardSprite extends FlxBasic {
 			this.front.y = this.y;
 			this.back.y = this.y;
 
-			this.front.x = this.x + FlxMath.lerp(0, this.width / 2, 1 - this.scale.x);
-			this.back.x = this.x + FlxMath.lerp(0, this.width / 2, 1 - this.scale.x);
+			if (this._flipping) {
+				this.front.x = this.x + FlxMath.lerp(0, this.width / 2, 1 - this.scale.x);
+				this.back.x = this.x + FlxMath.lerp(0, this.width / 2, 1 - this.scale.x);
+			}
 			this.front.visible = !this.showingBack;
 			this.back.visible = !this.front.visible;
-			this.front.setGraphicSize(this.width * this.scale.x, this.height * this.scale.y);
+			this.front.setGraphicSize(this.width * this.scale.x * (1 + this.z / 5), this.height * this.scale.y * (1 + this.z / 5));
 			this.front.updateHitbox();
 			this.back.setGraphicSize(this.front.width, this.front.height);
 			this.back.updateHitbox();
@@ -217,6 +237,10 @@ class CardSprite extends FlxBasic {
 		this._faces?.draw();
 	}
 
+	public function getMousePositionRelative() {
+		return {x: FlxG.mouse.x - this.x, y: FlxG.mouse.y - this.y};
+	}
+
 	public function mouseOverlaps():Bool {
 		var mousePosX = FlxG.mouse.x;
 		var mousePosY = FlxG.mouse.y;
@@ -227,25 +251,34 @@ class CardSprite extends FlxBasic {
 		return overlapingX && overlapingY;
 	}
 
-	private var _contextMenu:CardContextMenu;
-
-	public function contextMenu():CardContextMenu {
-		var menu = _contextMenu ?? (() -> {
-			var m = new CardContextMenu();
-			m.onMenuSelected = e -> {
-				var txt = e.menuItem.text.toLowerCase();
-				if (txt == "flip")
-					flip(true);
-				else if (txt == "tap")
-					trace('TAPPED!');
-			}
-			return m;
-		})();
+	public function contextMenu():Menu {
+		var menu = this.doubleFaced ? new DFCCardContextMenu() : (this.isTapped ? new TappedCardContextMenu() : new CardContextMenu());
+		menu.onMenuSelected = e -> {
+			var txt = e.menuItem.text.toLowerCase();
+			if (txt == "flip") {
+				this.flip(true);
+			} else if (txt == "tap" || txt == "untap")
+				this.isTapped = !this.isTapped;
+		};
 		menu.left = FlxG.mouse.screenX;
 		menu.top = FlxG.mouse.screenY;
-		return _contextMenu ??= menu;
+		return menu;
 	}
 }
+
+@:xml('
+<menu>
+	<menu-item text="Tap"/>
+</menu>
+')
+class CardContextMenu extends Menu {}
+
+@:xml('
+<menu>
+	<menu-item text="Untap"/>
+</menu>
+')
+class TappedCardContextMenu extends Menu {}
 
 @:xml('
 <menu>
@@ -253,4 +286,4 @@ class CardSprite extends FlxBasic {
 	<menu-item text="Tap"/>
 </menu>
 ')
-class CardContextMenu extends Menu {}
+class DFCCardContextMenu extends Menu {}

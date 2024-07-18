@@ -19,7 +19,7 @@ class BoosterPack {
 
 	public function new() {
 		if (!_setCache.exists(setCode))
-			_setCache.set(setCode, ScrySearch.queryCard('e:$setCode').getCollection());
+			_setCache.set(setCode, ScrySearch.queryCard('e:$setCode -t:basic').getCollection());
 		var setCards = _setCache.get(setCode);
 
 		var isMythic = FlxG.random.bool(20);
