@@ -3,7 +3,7 @@ package game.play.cards.display;
 import flixel.FlxG;
 import flixel.math.FlxMath;
 import game.play.cards.BoosterPack;
-import game.play.cards.CardSprite;
+import game.play.cards.display.CardSprite;
 
 @:access(game.play.cards.BoosterPack)
 class BoosterDisplay extends CardDisplay {
@@ -27,9 +27,11 @@ class BoosterDisplay extends CardDisplay {
 	override function update(elapsed:Float) {
 		super.update(elapsed);
 		var screenRatio = FlxG.width / FlxG.height;
+		var cardW:Null<Float> = null;
+		var cardH:Null<Float> = null;
 		for (index => card in this) {
-			card.x = FlxMath.lerp(card.x, this.x + ((index % _CARDS_ON_SCREEN) * card.width + _CARD_PADDING), elapsed * 7.6);
-			card.y = FlxMath.lerp(card.y, this.y + (Math.floor(index / _CARDS_ON_SCREEN) * card.height + (_CARD_PADDING * screenRatio)), elapsed * 7.6);
+			card.x = FlxMath.lerp(card.x, this.x + ((index % _CARDS_ON_SCREEN) * (cardW ??= card.width) + _CARD_PADDING), elapsed * 7.6);
+			card.y = FlxMath.lerp(card.y, this.y + (Math.floor(index / _CARDS_ON_SCREEN) * (cardH ??= card.height) + (_CARD_PADDING * screenRatio)), elapsed * 7.6);
 		}
 	}
 }

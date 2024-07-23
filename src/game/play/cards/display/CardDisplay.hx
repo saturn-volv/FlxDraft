@@ -1,13 +1,21 @@
 package game.play.cards.display;
 
 import flixel.util.FlxSort;
-import game.play.cards.CardSprite;
+import game.play.cards.display.CardSprite;
 
 class CardDisplay extends CardSprite {
 	public var members:Array<CardSprite> = [];
 
 	override public function new(x:Float = 0, y:Float = 0) {
 		super(x, y);
+	}
+	public function moveTo(pos:Int, card:CardSprite) {
+		this.members.remove(card);
+		this.insert(pos, card);
+	}
+	public function replace(replace:CardSprite, with:CardSprite) {
+		this.insert(members.indexOf(replace), with);
+		this.members.remove(replace);
 	}
 
 	public function insert(index:Int, cardSpr:CardSprite) {

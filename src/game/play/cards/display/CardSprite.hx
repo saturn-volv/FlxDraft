@@ -1,5 +1,6 @@
-package game.play.cards;
+package game.play.cards.display;
 
+import assets.shaders.SkewVertexShader.SkewVertex;
 import assets.Paths;
 import flixel.FlxBasic;
 import flixel.FlxG;
@@ -68,6 +69,8 @@ class CardSprite extends FlxBasic {
 	public static final DEFAULT_CARD_WIDTH:Int = 488;
 	public static final DEFAULT_CARD_HEIGHT:Int = 680;
 
+	public var card:Null<Card>;
+
 	public var hovering(get, never):Bool;
 
 	function get_hovering():Bool {
@@ -127,9 +130,13 @@ class CardSprite extends FlxBasic {
 
 	public var z:Float;
 
+	public var vertexSkew:SkewVertex;
+
 	override public function new(x:Float = 0, y:Float = 0, z:Float = 0) {
 		super();
 		this._faces = new FlxTypedSpriteGroup<CardFace>(x, y);
+		this.vertexSkew = new SkewVertex();
+		this._faces.shader = vertexSkew.shader;
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -138,6 +145,7 @@ class CardSprite extends FlxBasic {
 	public var doubleFaced:Bool;
 
 	public function fromCard(card:Card, waitForFirstFlip:Bool = false):CardSprite {
+		this.card = card;
 		@:privateAccess
 		var cardObj = card._struct;
 		doubleFaced = cardObj.card_faces != null;
@@ -169,6 +177,11 @@ class CardSprite extends FlxBasic {
 		this.height = height ?? this.height * ratio;
 	}
 
+	public function updateSkewShader(elapsed:Float) {
+		this.vertexSkew.shader.hovering.value =[1.0];
+		this.vertexSkew.update(elapsed);
+	}
+
 	var showingBack:Bool = false;
 
 	public var angle:Float = 0;
@@ -182,6 +195,12 @@ class CardSprite extends FlxBasic {
 			this.angle = this.isTapped ? 90 : 0;
 		this._faces.angle = FlxMath.lerp(this._faces.angle, this.angle, elapsed * 17);
 		this.z = FlxMath.lerp(this.z, this.mouseOverlaps() ? 0.15 : 0, elapsed * 9.11);
+
+		if (FlxG.mouse.deltaX != 0 || FlxG.mouse.deltaY != 0)
+			if (this.hovering)
+				updateSkewShader(elapsed);
+			else
+				this.vertexSkew.shader.hovering.value = [0];
 
 		if (this._flipping) {
 			this.scale.x = FlxMath.lerp(this.scale.x, (this.flipped ? !showingBack : showingBack) ? 1 : 0, elapsed * 17);
@@ -247,7 +266,6 @@ class CardSprite extends FlxBasic {
 
 		var overlapingX:Bool = mousePosX > this.x && mousePosX < this.x + this.width;
 		var overlapingY:Bool = mousePosY > this.y && mousePosY < this.y + this.height;
-
 		return overlapingX && overlapingY;
 	}
 

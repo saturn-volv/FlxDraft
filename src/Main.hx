@@ -1,5 +1,6 @@
 package;
 
+import game.play.states.BoosterPackState;
 import flixel.FlxG;
 import flixel.FlxGame;
 import game.play.CardState;
@@ -12,7 +13,7 @@ class Main extends Sprite {
 
 	public function new() {
 		super();
-		addChild(new FlxGame(0, 0, CardState, 60, 60, true));
+		addChild(new FlxGame(0, 0, BoosterPackState, 60, 60, true));
 		Toolkit.theme = "dark";
 		Toolkit.init();
 		FlxG.mouse.useSystemCursor = true;

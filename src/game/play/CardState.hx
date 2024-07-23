@@ -1,27 +1,35 @@
 package game.play;
 
+import game.play.cards.display.CardDisplay;
+import backend.cards.CardList;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.math.FlxMath;
 import game.play.cards.BoosterPack;
-import game.play.cards.CardSprite;
+import game.play.cards.display.CardSprite;
 import game.play.cards.display.BoosterDisplay;
 import haxe.ui.core.Screen;
 
 using Lambda;
 
 class CardState extends FlxState {
-	public var cardDisplay:BoosterDisplay;
-	public var showcasedCard:CardFace;
+	private var _dummyCard:CardSprite;
+
 	public var cardOfHolding:CardSprite; // I'm so funny.
+	public var cardDisplay:CardDisplay;
+	public var showcasedCard:CardFace;
+
+	public function new(?cardDisplay:CardDisplay) {
+		super();
+		this.cardDisplay = cardDisplay;
+	}
 
 	override function create() {
 		super.create();
 		this.bgColor = 0xFF3D212D;
-		cardDisplay = new BoosterDisplay().fromBooster(new BoosterPack());
-
 		showcasedCard = new CardFace();
-		cardOfHolding = new CardSprite();
+		_dummyCard = new CardSprite();
+		cardOfHolding = _dummyCard;
 		add(cardDisplay);
 		add(showcasedCard);
 		add(cardOfHolding);
@@ -29,18 +37,15 @@ class CardState extends FlxState {
 
 	override function update(elapsed:Float) {
 		super.update(elapsed);
-		if (FlxG.keys.justPressed.SPACE) {
-			for (card in cardDisplay) {
-				card.flip(true);
-			}
-		}
 
-		if (FlxG.keys.justPressed.F5)
-			FlxG.resetState();
 		updateMouse(elapsed);
 		updateShowcase(null, elapsed);
-
 		this.cardOfHolding.update(elapsed);
+
+		#if debug
+		if (FlxG.keys.justPressed.F5)
+			FlxG.resetState();
+		#end
 	}
 
 	private var _overlappingCard:Null<CardSprite>;
@@ -50,8 +55,8 @@ class CardState extends FlxState {
 	public function onMouseClicked(isRight:Bool = false) {
 		if (!isRight && _overlappingCard != null && !_openedContext) {
 			this.cardOfHolding = _overlappingCard;
+			this.cardDisplay.replace(_overlappingCard, _dummyCard);
 			this.cardOfHolding.holding = true;
-			this.cardDisplay.members.remove(_overlappingCard);
 		}
 		_openedContext = false;
 	}
@@ -66,13 +71,15 @@ class CardState extends FlxState {
 			}
 		}
 		if (!this.cardOfHolding.isEmpty && !isRight) {
-			this.cardOfHolding.holding = false;
-			this.cardDisplay.insert(this._overlappingCard != null ? (this.cardDisplay.indexOf(this._overlappingCard)
-				+ (this._overlappingCard.getMousePositionRelative().x >= this._overlappingCard.width / 2 ? 1 : 0)) : this.cardDisplay.members.length
-				+ 1,
-				this.cardOfHolding);
-			this.cardOfHolding = new CardSprite();
+			onHeldCardDropped(this.cardOfHolding);
 		}
+	}
+
+	function updateCardOfHolding(elapsed:Float) {
+		var drag = FlxMath.bound(Math.abs(FlxG.mouse.deltaX) / FlxG.width * elapsed * 1000 * 0.85, 0, 1);
+		this.cardOfHolding.angle = FlxMath.lerp(0, FlxG.mouse.deltaX > 0 ? 90 : -90, drag);
+		this.cardOfHolding.x += FlxG.mouse.deltaX;
+		this.cardOfHolding.y += FlxG.mouse.deltaY;
 	}
 
 	function updateMouse(elapsed:Float) {
@@ -86,11 +93,7 @@ class CardState extends FlxState {
 			onMouseReleased();
 
 		if (!this.cardOfHolding.isEmpty) {
-			@:privateAccess
-			var drag = FlxMath.bound(Math.abs(FlxG.mouse.deltaX) / FlxG.width * elapsed * 1000 * 0.85, 0, 1);
-			this.cardOfHolding.angle = FlxMath.lerp(0, FlxG.mouse.deltaX > 0 ? 90 : -90, drag);
-			this.cardOfHolding.x += FlxG.mouse.deltaX;
-			this.cardOfHolding.y += FlxG.mouse.deltaY;
+			updateCardOfHolding(elapsed);
 		}
 
 		this.hoveringAny = false;
@@ -109,6 +112,10 @@ class CardState extends FlxState {
 			this._overlappingCard = null;
 			this.showcasedCard.alpha = 0;
 		}
+	}
+	public function onHeldCardDropped(card:CardSprite) {
+		card.holding = false;
+		this.cardOfHolding = _dummyCard;
 	}
 
 	private var _idleNoise:Float = 0;
